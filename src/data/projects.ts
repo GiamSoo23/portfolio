@@ -98,7 +98,7 @@ export const projects: Project[] = [
     id: 'team-chile',
     title: 'FIRST Global Team Chile',
     role: 'Mentor',
-    period: '2024 — Present',
+    period: 'March 2025 — Present',
     location: 'Chile',
     summary: 'Long-term mentorship of a robotics team competing at FIRST Global, on both soft skills and fundraising.',
     tech: ['Mentorship', 'Public Speaking', 'Fundraising'],
@@ -150,6 +150,7 @@ export const projects: Project[] = [
       {
         id: 'copa-kai',
         label: 'Copa Ka’i',
+        period: 'Jan 2024 — Jun 2024',
         location: 'Maracaibo, Venezuela',
         images: [productioncopa1, productioncopa2, productioncopa3, productioncopa4],
         highlights: [
