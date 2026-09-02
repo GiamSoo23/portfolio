@@ -52,6 +52,8 @@ export interface Project {
   /** When set, the modal shows a toggle to switch between sub-galleries (e.g. two different roles under one card). */
   subsections?: ProjectSubsection[]
   emoji: string
+  /** Shows a "Currently Working" badge on the card. */
+  currentlyWorking?: boolean
 }
 
 export const projects: Project[] = [
@@ -66,6 +68,7 @@ export const projects: Project[] = [
     tech: ['C#', 'Unity', 'Magic Leap 2', 'Ultraleap'],
     accent: 'violet',
     emoji: '🥽',
+    currentlyWorking: true,
     images: [encode1],
     highlights: [
       'Built a new mixed-reality study phase end-to-end on Magic Leap 2 within a phase-pipeline architecture, developing director integration, completion UI, and hand-grabbable prop prefabs.',
@@ -83,56 +86,11 @@ export const projects: Project[] = [
     tech: ['Next.js 16', 'TypeScript', 'Prisma', 'Supabase', 'PostgreSQL', 'Vercel'],
     accent: 'blue',
     emoji: '🌐',
+    currentlyWorking: true,
     images: [fgcops1, fgcops2, fgcops3, fgcops4],
     highlights: [
       'Architected and built the platform from scratch to replace paper sheets and word-of-mouth coordination.',
       'Built a 29-table Prisma/Postgres schema powering digital judge evaluations, Step & Repeat photo tracking, and broadcast announcements.',
-    ],
-  },
-  {
-    id: 'mox',
-    title: 'Mox — Cross-Platform File Relay',
-    role: 'Creator and Developer',
-    period: 'May 2026',
-    summary:
-      'A cross-platform file-relay app moving files up to 500MB between Mac and Android through a private Supabase bucket.',
-    tech: ['Swift', 'Kotlin', 'Supabase'],
-    accent: 'teal',
-    emoji: '🔁',
-    images: [mox1, mox2],
-    highlights: [
-      'Built a Swift menu-bar app and a Kotlin Android share-target so files move between Mac and Android in one hotkey.',
-      'Implemented signed-URL access and a single-file relay schema, enabling native Android share-sheet integration.',
-    ],
-  },
-  {
-    id: 'production',
-    title: 'Event Production',
-    role: 'Production Coordinator',
-    period: 'Jan 2024 — Present',
-    tech: ['Event Production', 'AV Design', 'Logistics', 'Team Training'],
-    accent: 'orange',
-    emoji: '🎬',
-    summary: 'Live event production across two very different stages: a robotics world championship and a national opening ceremony.',
-    subsections: [
-      {
-        id: 'fgc',
-        label: 'FIRST Global Challenge',
-        images: [productionfgc1, productionfgc2, productionfgc4],
-        highlights: [
-          '⚠️ Placeholder — tell Claude the details of your FIRST Global Challenge production work and this will be replaced.',
-        ],
-      },
-      {
-        id: 'copa-kai',
-        label: 'Copa Ka’i',
-        location: 'Maracaibo, Venezuela',
-        images: [productioncopa1, productioncopa2, productioncopa3, productioncopa4],
-        highlights: [
-          'Designed the AV plan for a 45-minute opening ceremony inspired by Super Bowl Halftime Show #50, producing 20 animations viewed by 3,000+ people.',
-          'Drafted 12 role descriptions and trained 60 volunteers, empowering leaders to manage logistics for the 3-day Copa Ka’i competition.',
-        ],
-      },
     ],
   },
   {
@@ -145,23 +103,11 @@ export const projects: Project[] = [
     tech: ['Mentorship', 'Public Speaking', 'Fundraising'],
     accent: 'red',
     emoji: '🇨🇱',
+    currentlyWorking: true,
     images: [teamchile1],
     highlights: [
       'Mentored FIRST Global Team Chile, helping the team develop soft skills in communication and teamwork.',
       'Through the team’s TV, government, and radio appearances, helped raise ~$25,000 over the last two years to cover the team’s costs to compete.',
-    ],
-  },
-  {
-    id: 'volunteering',
-    title: 'Volunteering',
-    role: 'Various Roles',
-    period: 'Ongoing',
-    summary: 'Volunteer work across multiple organizations and initiatives — photos and details coming soon.',
-    tech: ['Community', 'Service'],
-    accent: 'green',
-    emoji: '🙌',
-    highlights: [
-      '⚠️ Placeholder — tell Claude about your volunteering experience and this will be replaced.',
     ],
   },
   {
@@ -182,6 +128,37 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: 'production',
+    title: 'Event Production',
+    role: 'Production Coordinator',
+    period: 'Jan 2024 — Present',
+    tech: ['Event Production', 'AV Design', 'Logistics', 'Team Training'],
+    accent: 'orange',
+    emoji: '🎬',
+    summary: 'Live event production across two very different stages: a robotics world championship and a national opening ceremony.',
+    subsections: [
+      {
+        id: 'fgc',
+        label: 'FIRST Global Challenge',
+        images: [productionfgc1, productionfgc2, productionfgc4],
+        highlights: [
+          'Took photography and video for the event, capturing teams and key moments across the competition.',
+          'Helped organize the Step & Repeat for teams’ videos over the 3-day event.',
+        ],
+      },
+      {
+        id: 'copa-kai',
+        label: 'Copa Ka’i',
+        location: 'Maracaibo, Venezuela',
+        images: [productioncopa1, productioncopa2, productioncopa3, productioncopa4],
+        highlights: [
+          'Designed the AV plan for a 45-minute opening ceremony inspired by Super Bowl Halftime Show #50, producing 20 animations viewed by 3,000+ people.',
+          'Drafted 12 role descriptions and trained 60 volunteers, empowering leaders to manage logistics for the 3-day Copa Ka’i competition.',
+        ],
+      },
+    ],
+  },
+  {
     id: 'panelly',
     title: 'Panelly — Solar Savings Estimator',
     role: 'Backend Lead',
@@ -196,6 +173,35 @@ export const projects: Project[] = [
       'Built the core solar-savings estimation pipeline using the Google Solar API, EIA API, and Google Places, adding a fallback for API coverage gaps.',
       'Excluded the recently repealed federal solar tax credit after researching current policy, keeping estimates accurate.',
       'Led and mentored a 4-person team as the sole backend developer, defining a shared Zod contract that let teammates build the UI, database, and gamification in parallel through a mid-project pivot in input design.',
+    ],
+  },
+  {
+    id: 'mox',
+    title: 'Mox — Cross-Platform File Relay',
+    role: 'Creator and Developer',
+    period: 'May 2026',
+    summary:
+      'A cross-platform file-relay app moving files up to 500MB between Mac and Android through a private Supabase bucket.',
+    tech: ['Swift', 'Kotlin', 'Supabase'],
+    accent: 'teal',
+    emoji: '🔁',
+    images: [mox1, mox2],
+    highlights: [
+      'Built a Swift menu-bar app and a Kotlin Android share-target so files move between Mac and Android in one hotkey.',
+      'Implemented signed-URL access and a single-file relay schema, enabling native Android share-sheet integration.',
+    ],
+  },
+  {
+    id: 'volunteering',
+    title: 'Volunteering',
+    role: 'Various Roles',
+    period: 'Ongoing',
+    summary: 'Volunteer work across multiple organizations and initiatives — photos and details coming soon.',
+    tech: ['Community', 'Service'],
+    accent: 'green',
+    emoji: '🙌',
+    highlights: [
+      '⚠️ Placeholder — tell Claude about your volunteering experience and this will be replaced.',
     ],
   },
 ]

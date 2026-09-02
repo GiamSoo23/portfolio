@@ -22,19 +22,6 @@ const CONTACT_METHODS = [
   },
 ]
 
-const CURRENT_WORK = [
-  {
-    title: 'Mixed-Reality HCI Research',
-    org: 'EnCoDe Lab, USF',
-    description: 'Building mixed-reality study experiences on Magic Leap 2 as a research assistant.',
-  },
-  {
-    title: 'Staff Operations Platform',
-    org: 'FIRST Global Challenge',
-    description: 'Leading development of the platform coordinating ~300 staff and volunteers for the 191-team competition.',
-  },
-]
-
 export function Contact() {
   return (
     <section id="contact" className="contact">
@@ -46,33 +33,18 @@ export function Contact() {
           any of these.
         </p>
 
-        <div className="contact__grid">
-          <div className="contact__methods">
-            {CONTACT_METHODS.map(({ icon: Icon, label, value, href }) => (
-              <a key={label} className="contact-method neu-raised" href={href} target="_blank" rel="noreferrer">
-                <span className="contact-method__icon neu-icon-btn">
-                  <Icon size={20} />
-                </span>
-                <span>
-                  <span className="contact-method__label">{label}</span>
-                  <span className="contact-method__value">{value}</span>
-                </span>
-              </a>
-            ))}
-          </div>
-
-          <div className="current-work neu-flat">
-            <h3 className="current-work__title">Currently Working On</h3>
-            <div className="current-work__list">
-              {CURRENT_WORK.map((item) => (
-                <div key={item.title} className="current-work__item neu-pressed">
-                  <p className="current-work__item-title">{item.title}</p>
-                  <p className="current-work__item-org">{item.org}</p>
-                  <p className="current-work__item-desc">{item.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+        <div className="contact__methods">
+          {CONTACT_METHODS.map(({ icon: Icon, label, value, href }) => (
+            <a key={label} className="contact-method neu-raised" href={href} target="_blank" rel="noreferrer">
+              <span className="contact-method__icon neu-icon-btn">
+                <Icon size={20} />
+              </span>
+              <span>
+                <span className="contact-method__label">{label}</span>
+                <span className="contact-method__value">{value}</span>
+              </span>
+            </a>
+          ))}
         </div>
 
         <footer className="footer">

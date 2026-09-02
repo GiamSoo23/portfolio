@@ -15,7 +15,15 @@ export function ProjectCard({ project, onExpand }: Props) {
 
   return (
     <article className="project-card neu-raised" style={accentStyle(project.accent)}>
-      <ProjectThumb project={project} overrideSrc={sub?.images[0]} />
+      <div className="project-thumb-wrap">
+        <ProjectThumb project={project} overrideSrc={sub?.images[0]} />
+        {project.currentlyWorking && (
+          <span className="project-card__badge">
+            <span className="project-card__badge-dot" />
+            Currently Working
+          </span>
+        )}
+      </div>
 
       <div className="project-card__body">
         <p className="project-card__role">{project.role}</p>
