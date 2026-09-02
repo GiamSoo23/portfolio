@@ -6,10 +6,12 @@ interface Props {
 }
 
 export function ProjectThumb({ project, className = '' }: Props) {
+  const cover = project.images?.[0]
+
   return (
     <div className={`project-thumb ${className}`}>
-      {project.image ? (
-        <img src={project.image} alt={project.title} />
+      {cover ? (
+        <img src={cover} alt={project.title} />
       ) : (
         <span className="project-thumb__emoji" aria-hidden="true">
           {project.emoji}

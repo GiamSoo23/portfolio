@@ -1,5 +1,6 @@
+import avatar from '../assets/avatar.jpeg'
 import { Greeting } from './Greeting'
-import { ArrowRightIcon, GitHubIcon, LinkedInIcon, MailIcon, UserIcon } from './icons'
+import { ArrowRightIcon, GitHubIcon, LinkedInIcon, MailIcon } from './icons'
 import './Hero.css'
 
 export function Hero() {
@@ -61,9 +62,7 @@ export function Hero() {
 
         <div className="hero__photo-wrap">
           <div className="hero__photo neu-raised">
-            {/* TODO: reemplaza este placeholder con tu foto en src/assets/avatar.jpg
-                y usa <img src={avatar} alt="Gregory Ramírez Fuentes" /> en su lugar */}
-            <UserIcon size={96} className="hero__photo-icon" />
+            <img src={avatar} alt="Gregory Ramírez Fuentes" />
           </div>
         </div>
       </div>

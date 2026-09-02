@@ -58,6 +58,7 @@
 
 .project-thumb {
   position: relative;
+  overflow: hidden;
   width: 100%;
   aspect-ratio: 16 / 9;
   flex-shrink: 0;
@@ -81,6 +82,34 @@
 
 .project-thumb--modal {
   aspect-ratio: 16 / 8;
+}
+
+.project-gallery__dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 14px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.project-gallery__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.project-gallery__dot:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.project-gallery__dot.is-active {
+  background: var(--card-accent);
+  transform: scale(1.25);
 }
 
 .project-card__body {

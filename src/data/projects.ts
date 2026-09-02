@@ -1,3 +1,14 @@
+import first1 from '../assets/projects/first-1.jpeg'
+import first2 from '../assets/projects/first-2.jpeg'
+import panelly1 from '../assets/projects/panelly-1.jpeg'
+import panelly2 from '../assets/projects/panelly-2.jpeg'
+import panelly3 from '../assets/projects/panelly-3.jpeg'
+import panelly4 from '../assets/projects/panelly-4.jpg'
+import shpe1 from '../assets/projects/shpe-1.jpeg'
+import shpe2 from '../assets/projects/shpe-2.jpeg'
+import shpe3 from '../assets/projects/shpe-3.jpeg'
+import shpe4 from '../assets/projects/shpe-4.jpeg'
+
 export type AccentColor = 'violet' | 'blue' | 'teal' | 'orange' | 'pink' | 'gold'
 
 export interface Project {
@@ -11,8 +22,8 @@ export interface Project {
   highlights: string[]
   link?: string
   accent: AccentColor
-  /** Path to a project image (e.g. imported from src/assets/projects). Falls back to `emoji` when absent. */
-  image?: string
+  /** Project photos (imported from src/assets/projects). First image is used as the card thumbnail; all are shown in the modal gallery. Falls back to `emoji` when empty. */
+  images?: string[]
   emoji: string
 }
 
@@ -44,6 +55,7 @@ export const projects: Project[] = [
     tech: ['Next.js 16', 'TypeScript', 'Prisma', 'Supabase', 'PostgreSQL', 'Vercel'],
     accent: 'blue',
     emoji: '🌐',
+    images: [first1, first2],
     highlights: [
       'Architected and built the platform from scratch to replace paper sheets and word-of-mouth coordination.',
       'Built a 29-table Prisma/Postgres schema powering digital judge evaluations, Step & Repeat photo tracking, and broadcast announcements.',
@@ -93,6 +105,7 @@ export const projects: Project[] = [
     tech: ['Event Strategy', 'Sponsorship', 'Product Concept', 'NFC'],
     accent: 'pink',
     emoji: '🚀',
+    images: [shpe1, shpe2, shpe3, shpe4],
     highlights: [
       'Direct strategic vision for 2 annual hackathons, HackJam and Hack-A-Bull, obtaining $20,000 through partnerships with SHPE, MLH, and SASE, and companies like Microsoft, Velera, and Amgen, impacting 515 students.',
       'Developed the concept for the Hackabull Web and Mobile App, supporting brainstorming, design, and testing of event schedules, participant resources, and NFC-based attendee networking through participant lanyards.',
@@ -108,6 +121,7 @@ export const projects: Project[] = [
     tech: ['Next.js', 'Google Solar API', 'EIA API', 'Zod'],
     accent: 'gold',
     emoji: '☀️',
+    images: [panelly1, panelly2, panelly3, panelly4],
     highlights: [
       'Built the core solar-savings estimation pipeline using the Google Solar API, EIA API, and Google Places, adding a fallback for API coverage gaps.',
       'Excluded the recently repealed federal solar tax credit after researching current policy, keeping estimates accurate.',

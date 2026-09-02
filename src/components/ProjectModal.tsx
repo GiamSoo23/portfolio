@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { accentStyle } from '../data/accentColors'
 import type { Project } from '../data/projects'
 import { CloseIcon } from './icons'
-import { ProjectThumb } from './ProjectThumb'
+import { ProjectGallery } from './ProjectGallery'
 
 interface Props {
   project: Project
@@ -36,7 +36,7 @@ export function ProjectModal({ project, onClose }: Props) {
           <CloseIcon />
         </button>
 
-        <ProjectThumb project={project} className="project-thumb--modal" />
+        <ProjectGallery project={project} className="project-thumb--modal" />
 
         <div className="modal__content">
           <p className="project-card__role">{project.role}</p>
