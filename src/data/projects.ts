@@ -191,17 +191,4 @@ export const projects: Project[] = [
       'Implemented signed-URL access and a single-file relay schema, enabling native Android share-sheet integration.',
     ],
   },
-  {
-    id: 'volunteering',
-    title: 'Volunteering',
-    role: 'Various Roles',
-    period: 'Ongoing',
-    summary: 'Volunteer work across multiple organizations and initiatives — photos and details coming soon.',
-    tech: ['Community', 'Service'],
-    accent: 'green',
-    emoji: '🙌',
-    highlights: [
-      '⚠️ Placeholder — tell Claude about your volunteering experience and this will be replaced.',
-    ],
-  },
 ]
