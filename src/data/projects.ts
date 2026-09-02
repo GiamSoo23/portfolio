@@ -1,16 +1,12 @@
 const asset = (name: string) => `${import.meta.env.BASE_URL}projects/${name}`
 
 const encode1 = asset('encode-1.jpeg')
-const first1 = asset('first-1.jpeg')
-const first2 = asset('first-2.jpeg')
-const first3 = asset('first-3.jpeg')
-const first4 = asset('first-4.jpeg')
-const first5 = asset('first-5.jpeg')
 const fgcops1 = asset('fgcops-1.jpeg')
 const fgcops2 = asset('fgcops-2.jpeg')
 const fgcops3 = asset('fgcops-3.jpeg')
-const mox1 = asset('mox-1.jpg')
-const mox2 = asset('mox-2.jpeg')
+const fgcops4 = asset('fgcops-4.jpeg')
+const mox1 = asset('mox-1.jpeg')
+const mox2 = asset('mox-2.jpg')
 const panelly1 = asset('panelly-1.jpeg')
 const panelly2 = asset('panelly-2.jpeg')
 const panelly3 = asset('panelly-3.jpeg')
@@ -21,7 +17,6 @@ const productioncopa3 = asset('productioncopa-3.jpeg')
 const productioncopa4 = asset('productioncopa-4.jpeg')
 const productionfgc1 = asset('productionfgc-1.jpeg')
 const productionfgc2 = asset('productionfgc-2.jpeg')
-const productionfgc3 = asset('productionfgc-3.jpg')
 const productionfgc4 = asset('productionfgc-4.jpg')
 const shpe1 = asset('shpe-1.jpeg')
 const shpe2 = asset('shpe-2.jpeg')
@@ -88,7 +83,7 @@ export const projects: Project[] = [
     tech: ['Next.js 16', 'TypeScript', 'Prisma', 'Supabase', 'PostgreSQL', 'Vercel'],
     accent: 'blue',
     emoji: '🌐',
-    images: [first1, first2, first3, first4, first5, fgcops1, fgcops2, fgcops3],
+    images: [fgcops1, fgcops2, fgcops3, fgcops4],
     highlights: [
       'Architected and built the platform from scratch to replace paper sheets and word-of-mouth coordination.',
       'Built a 29-table Prisma/Postgres schema powering digital judge evaluations, Step & Repeat photo tracking, and broadcast announcements.',
@@ -123,7 +118,7 @@ export const projects: Project[] = [
       {
         id: 'fgc',
         label: 'FIRST Global Challenge',
-        images: [productionfgc1, productionfgc2, productionfgc3, productionfgc4],
+        images: [productionfgc1, productionfgc2, productionfgc4],
         highlights: [
           '⚠️ Placeholder — tell Claude the details of your FIRST Global Challenge production work and this will be replaced.',
         ],

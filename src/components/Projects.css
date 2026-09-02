@@ -141,6 +141,29 @@
   font-size: 0.95rem;
 }
 
+.project-card__subtoggle {
+  margin-top: 14px;
+  display: inline-flex;
+  padding: 4px;
+  gap: 4px;
+  align-self: flex-start;
+}
+
+.project-card__subtoggle-btn {
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: box-shadow 0.15s ease, color 0.15s ease;
+}
+
+.project-card__subtoggle-btn.is-active {
+  color: var(--card-accent);
+  background: var(--bg-raised);
+  box-shadow: 3px 3px 6px var(--shadow-dark), -3px -3px 6px var(--shadow-light);
+}
+
 .project-card__tags {
   margin-top: 18px;
   display: flex;

@@ -5,7 +5,7 @@ import { ProjectModal } from './ProjectModal'
 import './Projects.css'
 
 export function Projects() {
-  const [active, setActive] = useState<Project | null>(null)
+  const [active, setActive] = useState<{ project: Project; subIndex: number } | null>(null)
 
   return (
     <section id="projects" className="projects">
@@ -19,12 +19,22 @@ export function Projects() {
 
         <div className="projects__grid">
           {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} onExpand={setActive} />
+            <ProjectCard
+              key={project.id}
+              project={project}
+              onExpand={(p, subIndex) => setActive({ project: p, subIndex })}
+            />
           ))}
         </div>
       </div>
 
-      {active && <ProjectModal project={active} onClose={() => setActive(null)} />}
+      {active && (
+        <ProjectModal
+          project={active.project}
+          initialSubIndex={active.subIndex}
+          onClose={() => setActive(null)}
+        />
+      )}
     </section>
   )
 }

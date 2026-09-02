@@ -6,11 +6,12 @@ import { ProjectGallery } from './ProjectGallery'
 
 interface Props {
   project: Project
+  initialSubIndex?: number
   onClose: () => void
 }
 
-export function ProjectModal({ project, onClose }: Props) {
-  const [subIndex, setSubIndex] = useState(0)
+export function ProjectModal({ project, initialSubIndex = 0, onClose }: Props) {
+  const [subIndex, setSubIndex] = useState(initialSubIndex)
   const sub = project.subsections?.[subIndex]
 
   useEffect(() => {
