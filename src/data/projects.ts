@@ -1,3 +1,4 @@
+import encode1 from '../assets/projects/encode-1.jpeg'
 import first1 from '../assets/projects/first-1.jpeg'
 import first2 from '../assets/projects/first-2.jpeg'
 import first3 from '../assets/projects/first-3.jpeg'
@@ -42,6 +43,7 @@ export const projects: Project[] = [
     tech: ['C#', 'Unity', 'Magic Leap 2', 'Ultraleap'],
     accent: 'violet',
     emoji: '🥽',
+    images: [encode1],
     highlights: [
       'Built a new mixed-reality study phase end-to-end on Magic Leap 2 within a phase-pipeline architecture, developing director integration, completion UI, and hand-grabbable prop prefabs.',
       'Diagnosed and fixed a broken two-handed grab interaction by tracing Unity physics through the Ultraleap Physical Hands package source, resolving grab-permission handling and kinematic vs. velocity-based rigidbody movement.',
