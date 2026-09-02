@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { accentStyle } from '../data/accentColors'
 import type { Project } from '../data/projects'
 import { CloseIcon } from './icons'
 
@@ -27,8 +28,10 @@ export function ProjectModal({ project, onClose }: Props) {
         role="dialog"
         aria-modal="true"
         aria-labelledby="modal-title"
+        style={accentStyle(project.accent)}
         onClick={(e) => e.stopPropagation()}
       >
+        <div className="project-card__accent-bar" />
         <button className="modal__close neu-icon-btn" onClick={onClose} aria-label="Close">
           <CloseIcon />
         </button>

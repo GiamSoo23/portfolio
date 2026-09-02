@@ -1,3 +1,5 @@
+export type AccentColor = 'violet' | 'blue' | 'teal' | 'orange'
+
 export interface Project {
   id: string
   title: string
@@ -8,6 +10,7 @@ export interface Project {
   tech: string[]
   highlights: string[]
   link?: string
+  accent: AccentColor
 }
 
 export const projects: Project[] = [
@@ -20,6 +23,7 @@ export const projects: Project[] = [
     summary:
       'Human-Computer Interaction research building mixed-reality study experiences on Magic Leap 2, as part of a 6-person team directed by Julia Woodward.',
     tech: ['C#', 'Unity', 'Magic Leap 2', 'Ultraleap'],
+    accent: 'violet',
     highlights: [
       'Built a new mixed-reality study phase end-to-end on Magic Leap 2 within a phase-pipeline architecture, developing director integration, completion UI, and hand-grabbable prop prefabs.',
       'Diagnosed and fixed a broken two-handed grab interaction by tracing Unity physics through the Ultraleap Physical Hands package source, resolving grab-permission handling and kinematic vs. velocity-based rigidbody movement.',
@@ -34,6 +38,7 @@ export const projects: Project[] = [
     summary:
       'A staff-operations PWA coordinating ~300 staff and volunteers across 10 role types for the 191-team FIRST Global Challenge.',
     tech: ['Next.js 16', 'TypeScript', 'Prisma', 'Supabase', 'PostgreSQL', 'Vercel'],
+    accent: 'blue',
     highlights: [
       'Architected and built the platform from scratch to replace paper sheets and word-of-mouth coordination.',
       'Built a 29-table Prisma/Postgres schema powering digital judge evaluations, Step & Repeat photo tracking, and broadcast announcements.',
@@ -47,6 +52,7 @@ export const projects: Project[] = [
     summary:
       'A cross-platform file-relay app moving files up to 500MB between Mac and Android through a private Supabase bucket.',
     tech: ['Swift', 'Kotlin', 'Supabase'],
+    accent: 'teal',
     highlights: [
       'Built a Swift menu-bar app and a Kotlin Android share-target so files move between Mac and Android in one hotkey.',
       'Implemented signed-URL access and a single-file relay schema, enabling native Android share-sheet integration.',
@@ -61,6 +67,7 @@ export const projects: Project[] = [
     summary:
       'Combining large-scale event production with long-term mentorship of a robotics team competing at FIRST Global.',
     tech: ['Event Production', 'Mentorship', 'Public Speaking', 'Fundraising'],
+    accent: 'orange',
     highlights: [
       'Designed the AV plan for a 45-minute opening ceremony inspired by Super Bowl Halftime Show #50, producing 20 animations viewed by 3,000+ people.',
       'Drafted 12 role descriptions and trained 60 volunteers, empowering leaders to manage logistics for the 3-day Copa Ka’i competition.',

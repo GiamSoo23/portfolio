@@ -15,7 +15,7 @@
 }
 
 .hero__title {
-  margin-top: 16px;
+  margin-top: 10px;
   font-size: clamp(2.1rem, 6vw, 3.4rem);
   line-height: 1.15;
   font-weight: 800;

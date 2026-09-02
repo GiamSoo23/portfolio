@@ -1,3 +1,4 @@
+import { accentStyle } from '../data/accentColors'
 import type { Project } from '../data/projects'
 import { ArrowRightIcon } from './icons'
 
@@ -8,7 +9,8 @@ interface Props {
 
 export function ProjectCard({ project, onExpand }: Props) {
   return (
-    <article className="project-card neu-raised">
+    <article className="project-card neu-raised" style={accentStyle(project.accent)}>
+      <div className="project-card__accent-bar" />
       <div className="project-card__body">
         <p className="project-card__role">{project.role}</p>
         <h3 className="project-card__title">{project.title}</h3>

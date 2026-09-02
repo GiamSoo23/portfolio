@@ -1,0 +1,17 @@
+import type { CSSProperties } from 'react'
+import type { AccentColor } from './projects'
+
+const VAR_MAP: Record<AccentColor, { color: string; glow: string }> = {
+  orange: { color: 'var(--accent)', glow: 'var(--accent-glow)' },
+  blue: { color: 'var(--accent-2)', glow: 'var(--accent-2-glow)' },
+  teal: { color: 'var(--accent-3)', glow: 'var(--accent-3-glow)' },
+  violet: { color: 'var(--accent-4)', glow: 'var(--accent-4-glow)' },
+}
+
+export function accentStyle(accent: AccentColor): CSSProperties {
+  const { color, glow } = VAR_MAP[accent]
+  return {
+    '--card-accent': color,
+    '--card-accent-glow': glow,
+  } as CSSProperties
+}

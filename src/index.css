@@ -1,19 +1,29 @@
 :root {
-  --bg: #e6e9ef;
-  --bg-raised: #e6e9ef;
-  --shadow-dark: #b8bec9;
-  --shadow-light: #ffffff;
-  --text-primary: #2f333d;
-  --text-secondary: #6b7280;
+  --bg: #1a1c22;
+  --bg-raised: #1a1c22;
+  --shadow-dark: #101116;
+  --shadow-light: #262a33;
+  --text-primary: #f2f3f6;
+  --text-secondary: #9aa1b1;
   --accent: #ff7a30;
+  --accent-glow: rgba(255, 122, 48, 0.4);
   --accent-contrast: #ffffff;
+  --accent-2: #4c8bff;
+  --accent-2-glow: rgba(76, 139, 255, 0.4);
+  --accent-3: #1ec9b7;
+  --accent-3-glow: rgba(30, 201, 183, 0.4);
+  --accent-4: #a06bff;
+  --accent-4-glow: rgba(160, 107, 255, 0.4);
   --radius-lg: 28px;
   --radius-md: 18px;
   --radius-sm: 12px;
   --radius-pill: 999px;
 
-  color-scheme: light;
-  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-body: 'Zalando Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Zalando Sans Expanded', 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+  color-scheme: dark;
+  font-family: var(--font-body);
 }
 
 * {
@@ -28,7 +38,7 @@ body,
 
 body {
   margin: 0;
-  background: var(--bg);
+  background: radial-gradient(1100px 700px at 50% -8%, #21242c 0%, var(--bg) 55%) fixed;
   color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
 }
@@ -39,6 +49,14 @@ h3,
 h4,
 p {
   margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.01em;
 }
 
 button {

@@ -1,0 +1,60 @@
+.greeting {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+@media (min-width: 860px) {
+  .greeting {
+    justify-content: flex-start;
+  }
+}
+
+.greeting__word {
+  display: inline-block;
+  min-width: 3ch;
+  animation: greeting-in 0.45s ease;
+}
+
+.greeting__wave {
+  display: inline-block;
+  font-size: 1.3rem;
+  transform-origin: 70% 70%;
+  animation: wave 2.2s ease-in-out infinite;
+}
+
+@keyframes greeting-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes wave {
+  0%,
+  60%,
+  100% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+}

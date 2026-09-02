@@ -1,3 +1,4 @@
+import { Greeting } from './Greeting'
 import { ArrowRightIcon, GitHubIcon, LinkedInIcon, MailIcon, UserIcon } from './icons'
 import './Hero.css'
 
@@ -9,8 +10,9 @@ export function Hero() {
       <div className="container hero__inner">
         <div className="hero__text">
           <p className="section-label">Computer Science @ USF</p>
+          <Greeting />
           <h1 className="hero__title">
-            Hi, I'm <span className="hero__accent">Gregory</span>.<br />
+            I'm <span className="hero__accent">Gregory</span>.<br />
             I build interactive systems.
           </h1>
           <p className="hero__subtitle">
