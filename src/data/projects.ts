@@ -1,5 +1,8 @@
 import first1 from '../assets/projects/first-1.jpeg'
 import first2 from '../assets/projects/first-2.jpeg'
+import first3 from '../assets/projects/first-3.jpeg'
+import first4 from '../assets/projects/first-4.jpeg'
+import first5 from '../assets/projects/first-5.jpeg'
 import panelly1 from '../assets/projects/panelly-1.jpeg'
 import panelly2 from '../assets/projects/panelly-2.jpeg'
 import panelly3 from '../assets/projects/panelly-3.jpeg'
@@ -55,7 +58,7 @@ export const projects: Project[] = [
     tech: ['Next.js 16', 'TypeScript', 'Prisma', 'Supabase', 'PostgreSQL', 'Vercel'],
     accent: 'blue',
     emoji: '🌐',
-    images: [first1, first2],
+    images: [first1, first2, first3, first4, first5],
     highlights: [
       'Architected and built the platform from scratch to replace paper sheets and word-of-mouth coordination.',
       'Built a 29-table Prisma/Postgres schema powering digital judge evaluations, Step & Repeat photo tracking, and broadcast announcements.',
