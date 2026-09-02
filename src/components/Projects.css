@@ -127,17 +127,61 @@
   aspect-ratio: 16 / 8;
 }
 
+.project-gallery__nav {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: rgba(15, 17, 21, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: background 0.15s ease, transform 0.15s ease;
+  transform: translateY(-50%);
+}
+
+.project-gallery__nav:hover {
+  background: rgba(15, 17, 21, 0.78);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.project-gallery__nav--prev {
+  left: 12px;
+}
+
+.project-gallery__nav--next {
+  right: 12px;
+}
+
 .project-gallery__dots {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 14px;
+  bottom: 6px;
+  z-index: 2;
   display: flex;
   justify-content: center;
-  gap: 8px;
+  gap: 2px;
 }
 
 .project-gallery__dot {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-gallery__dot::after {
+  content: '';
   width: 8px;
   height: 8px;
   border-radius: 50%;
@@ -146,11 +190,11 @@
   transition: background 0.15s ease, transform 0.15s ease;
 }
 
-.project-gallery__dot:hover {
+.project-gallery__dot:hover::after {
   background: rgba(255, 255, 255, 0.7);
 }
 
-.project-gallery__dot.is-active {
+.project-gallery__dot.is-active::after {
   background: var(--card-accent);
   transform: scale(1.25);
 }
@@ -384,13 +428,13 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* When the total number of cards is odd, let the trailing one take the full row
-     instead of leaving an empty slot — keeps working automatically as cards are added. */
+  /* When the total number of cards is odd, give the trailing one its own row and
+     center it at normal card width instead of stretching it edge to edge — keeps
+     working automatically as cards are added. */
   .projects__grid > .project-card:last-child:nth-child(odd) {
     grid-column: 1 / -1;
-  }
-
-  .projects__grid > .project-card:last-child:nth-child(odd) .project-thumb {
-    aspect-ratio: 32 / 9;
+    width: 100%;
+    max-width: 552px;
+    margin: 0 auto;
   }
 }

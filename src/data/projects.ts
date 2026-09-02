@@ -5,8 +5,9 @@ const fgcops1 = asset('fgcops-1.jpeg')
 const fgcops2 = asset('fgcops-2.jpeg')
 const fgcops3 = asset('fgcops-3.jpeg')
 const fgcops4 = asset('fgcops-4.jpeg')
-const mox1 = asset('mox-1.jpeg')
-const mox2 = asset('mox-2.jpg')
+const mox1 = asset('mox-1.jpg')
+const mox2 = asset('mox-2.jpeg')
+const mox3 = asset('mox-3.jpg')
 const panelly1 = asset('panelly-1.jpeg')
 const panelly2 = asset('panelly-2.jpeg')
 const panelly3 = asset('panelly-3.jpeg')
@@ -185,7 +186,7 @@ export const projects: Project[] = [
     tech: ['Swift', 'Kotlin', 'Supabase'],
     accent: 'teal',
     emoji: '🔁',
-    images: [mox1, mox2],
+    images: [mox1, mox2, mox3],
     highlights: [
       'Built a Swift menu-bar app and a Kotlin Android share-target so files move between Mac and Android in one hotkey.',
       'Implemented signed-URL access and a single-file relay schema, enabling native Android share-sheet integration.',
