@@ -232,6 +232,28 @@
   font-size: 0.9rem;
 }
 
+.modal__subtoggle {
+  margin-top: 18px;
+  display: inline-flex;
+  padding: 5px;
+  gap: 4px;
+}
+
+.modal__subtoggle-btn {
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: box-shadow 0.15s ease, color 0.15s ease;
+}
+
+.modal__subtoggle-btn.is-active {
+  color: var(--card-accent);
+  background: var(--bg-raised);
+  box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
+}
+
 .modal__highlights {
   margin-top: 22px;
   display: flex;

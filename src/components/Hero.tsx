@@ -1,4 +1,3 @@
-import avatar from '../assets/avatar.jpeg'
 import { Greeting } from './Greeting'
 import { ArrowRightIcon, GitHubIcon, LinkedInIcon, MailIcon } from './icons'
 import './Hero.css'
@@ -62,7 +61,7 @@ export function Hero() {
 
         <div className="hero__photo-wrap">
           <div className="hero__photo neu-raised">
-            <img src={avatar} alt="Gregory Ramírez Fuentes" />
+            <img src={`${import.meta.env.BASE_URL}avatar.jpeg`} alt="Gregory Ramírez Fuentes" />
           </div>
         </div>
       </div>

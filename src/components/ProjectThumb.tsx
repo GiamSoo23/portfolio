@@ -6,7 +6,7 @@ interface Props {
 }
 
 export function ProjectThumb({ project, className = '' }: Props) {
-  const cover = project.images?.[0]
+  const cover = project.images?.[0] ?? project.subsections?.[0]?.images?.[0]
 
   return (
     <div className={`project-thumb ${className}`}>

@@ -1,19 +1,44 @@
-import encode1 from '../assets/projects/encode-1.jpeg'
-import first1 from '../assets/projects/first-1.jpeg'
-import first2 from '../assets/projects/first-2.jpeg'
-import first3 from '../assets/projects/first-3.jpeg'
-import first4 from '../assets/projects/first-4.jpeg'
-import first5 from '../assets/projects/first-5.jpeg'
-import panelly1 from '../assets/projects/panelly-1.jpeg'
-import panelly2 from '../assets/projects/panelly-2.jpeg'
-import panelly3 from '../assets/projects/panelly-3.jpeg'
-import panelly4 from '../assets/projects/panelly-4.jpg'
-import shpe1 from '../assets/projects/shpe-1.jpeg'
-import shpe2 from '../assets/projects/shpe-2.jpeg'
-import shpe3 from '../assets/projects/shpe-3.jpeg'
-import shpe4 from '../assets/projects/shpe-4.jpeg'
+const asset = (name: string) => `${import.meta.env.BASE_URL}projects/${name}`
 
-export type AccentColor = 'violet' | 'blue' | 'teal' | 'orange' | 'pink' | 'gold'
+const encode1 = asset('encode-1.jpeg')
+const first1 = asset('first-1.jpeg')
+const first2 = asset('first-2.jpeg')
+const first3 = asset('first-3.jpeg')
+const first4 = asset('first-4.jpeg')
+const first5 = asset('first-5.jpeg')
+const fgcops1 = asset('fgcops-1.jpeg')
+const fgcops2 = asset('fgcops-2.jpeg')
+const fgcops3 = asset('fgcops-3.jpeg')
+const mox1 = asset('mox-1.jpg')
+const mox2 = asset('mox-2.jpeg')
+const panelly1 = asset('panelly-1.jpeg')
+const panelly2 = asset('panelly-2.jpeg')
+const panelly3 = asset('panelly-3.jpeg')
+const panelly4 = asset('panelly-4.jpg')
+const productioncopa1 = asset('productioncopa-1.jpeg')
+const productioncopa2 = asset('productioncopa-2.jpg')
+const productioncopa3 = asset('productioncopa-3.jpeg')
+const productioncopa4 = asset('productioncopa-4.jpeg')
+const productionfgc1 = asset('productionfgc-1.jpeg')
+const productionfgc2 = asset('productionfgc-2.jpeg')
+const productionfgc3 = asset('productionfgc-3.jpg')
+const productionfgc4 = asset('productionfgc-4.jpg')
+const shpe1 = asset('shpe-1.jpeg')
+const shpe2 = asset('shpe-2.jpeg')
+const shpe3 = asset('shpe-3.jpeg')
+const shpe4 = asset('shpe-4.jpeg')
+const teamchile1 = asset('teamchile-1.jpg')
+
+export type AccentColor = 'violet' | 'blue' | 'teal' | 'orange' | 'pink' | 'gold' | 'red' | 'green'
+
+export interface ProjectSubsection {
+  id: string
+  label: string
+  period?: string
+  location?: string
+  images: string[]
+  highlights: string[]
+}
 
 export interface Project {
   id: string
@@ -23,11 +48,14 @@ export interface Project {
   location?: string
   summary: string
   tech: string[]
-  highlights: string[]
+  /** Used when the project has a single flat gallery (no subsections). */
+  highlights?: string[]
   link?: string
   accent: AccentColor
-  /** Project photos (imported from src/assets/projects). First image is used as the card thumbnail; all are shown in the modal gallery. Falls back to `emoji` when empty. */
+  /** Project photos, served from public/projects/. First image is used as the card thumbnail; all are shown in the modal gallery. Falls back to `emoji` when empty. Ignored when `subsections` is set. */
   images?: string[]
+  /** When set, the modal shows a toggle to switch between sub-galleries (e.g. two different roles under one card). */
+  subsections?: ProjectSubsection[]
   emoji: string
 }
 
@@ -60,7 +88,7 @@ export const projects: Project[] = [
     tech: ['Next.js 16', 'TypeScript', 'Prisma', 'Supabase', 'PostgreSQL', 'Vercel'],
     accent: 'blue',
     emoji: '🌐',
-    images: [first1, first2, first3, first4, first5],
+    images: [first1, first2, first3, first4, first5, fgcops1, fgcops2, fgcops3],
     highlights: [
       'Architected and built the platform from scratch to replace paper sheets and word-of-mouth coordination.',
       'Built a 29-table Prisma/Postgres schema powering digital judge evaluations, Step & Repeat photo tracking, and broadcast announcements.',
@@ -76,27 +104,69 @@ export const projects: Project[] = [
     tech: ['Swift', 'Kotlin', 'Supabase'],
     accent: 'teal',
     emoji: '🔁',
+    images: [mox1, mox2],
     highlights: [
       'Built a Swift menu-bar app and a Kotlin Android share-target so files move between Mac and Android in one hotkey.',
       'Implemented signed-URL access and a single-file relay schema, enabling native Android share-sheet integration.',
     ],
   },
   {
-    id: 'leadership',
-    title: 'Leadership & Community Impact',
-    role: 'Production Coordinator (Copa Ka’i) · Mentor (Team Chile)',
+    id: 'production',
+    title: 'Event Production',
+    role: 'Production Coordinator',
     period: 'Jan 2024 — Present',
-    location: 'Maracaibo, Venezuela · Chile',
-    summary:
-      'Combining large-scale event production with long-term mentorship of a robotics team competing at FIRST Global.',
-    tech: ['Event Production', 'Mentorship', 'Public Speaking', 'Fundraising'],
+    tech: ['Event Production', 'AV Design', 'Logistics', 'Team Training'],
     accent: 'orange',
-    emoji: '🤝',
+    emoji: '🎬',
+    summary: 'Live event production across two very different stages: a robotics world championship and a national opening ceremony.',
+    subsections: [
+      {
+        id: 'fgc',
+        label: 'FIRST Global Challenge',
+        images: [productionfgc1, productionfgc2, productionfgc3, productionfgc4],
+        highlights: [
+          '⚠️ Placeholder — tell Claude the details of your FIRST Global Challenge production work and this will be replaced.',
+        ],
+      },
+      {
+        id: 'copa-kai',
+        label: 'Copa Ka’i',
+        location: 'Maracaibo, Venezuela',
+        images: [productioncopa1, productioncopa2, productioncopa3, productioncopa4],
+        highlights: [
+          'Designed the AV plan for a 45-minute opening ceremony inspired by Super Bowl Halftime Show #50, producing 20 animations viewed by 3,000+ people.',
+          'Drafted 12 role descriptions and trained 60 volunteers, empowering leaders to manage logistics for the 3-day Copa Ka’i competition.',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'team-chile',
+    title: 'FIRST Global Team Chile',
+    role: 'Mentor',
+    period: '2024 — Present',
+    location: 'Chile',
+    summary: 'Long-term mentorship of a robotics team competing at FIRST Global, on both soft skills and fundraising.',
+    tech: ['Mentorship', 'Public Speaking', 'Fundraising'],
+    accent: 'red',
+    emoji: '🇨🇱',
+    images: [teamchile1],
     highlights: [
-      'Designed the AV plan for a 45-minute opening ceremony inspired by Super Bowl Halftime Show #50, producing 20 animations viewed by 3,000+ people.',
-      'Drafted 12 role descriptions and trained 60 volunteers, empowering leaders to manage logistics for the 3-day Copa Ka’i competition.',
       'Mentored FIRST Global Team Chile, helping the team develop soft skills in communication and teamwork.',
       'Through the team’s TV, government, and radio appearances, helped raise ~$25,000 over the last two years to cover the team’s costs to compete.',
+    ],
+  },
+  {
+    id: 'volunteering',
+    title: 'Volunteering',
+    role: 'Various Roles',
+    period: 'Ongoing',
+    summary: 'Volunteer work across multiple organizations and initiatives — photos and details coming soon.',
+    tech: ['Community', 'Service'],
+    accent: 'green',
+    emoji: '🙌',
+    highlights: [
+      '⚠️ Placeholder — tell Claude about your volunteering experience and this will be replaced.',
     ],
   },
   {

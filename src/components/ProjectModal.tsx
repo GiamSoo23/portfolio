@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { accentStyle } from '../data/accentColors'
 import type { Project } from '../data/projects'
 import { CloseIcon } from './icons'
@@ -10,6 +10,9 @@ interface Props {
 }
 
 export function ProjectModal({ project, onClose }: Props) {
+  const [subIndex, setSubIndex] = useState(0)
+  const sub = project.subsections?.[subIndex]
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose()
@@ -21,6 +24,11 @@ export function ProjectModal({ project, onClose }: Props) {
       document.body.style.overflow = ''
     }
   }, [onClose])
+
+  const images = sub ? sub.images : project.images ?? []
+  const highlights = sub ? sub.highlights : project.highlights ?? []
+  const period = sub?.period ?? project.period
+  const location = sub?.location ?? project.location
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -36,7 +44,12 @@ export function ProjectModal({ project, onClose }: Props) {
           <CloseIcon />
         </button>
 
-        <ProjectGallery project={project} className="project-thumb--modal" />
+        <ProjectGallery
+          images={images}
+          alt={sub ? `${project.title} — ${sub.label}` : project.title}
+          emoji={project.emoji}
+          className="project-thumb--modal"
+        />
 
         <div className="modal__content">
           <p className="project-card__role">{project.role}</p>
@@ -44,12 +57,26 @@ export function ProjectModal({ project, onClose }: Props) {
             {project.title}
           </h3>
           <p className="modal__meta">
-            {project.period}
-            {project.location ? ` · ${project.location}` : ''}
+            {period}
+            {location ? ` · ${location}` : ''}
           </p>
 
+          {project.subsections && (
+            <div className="modal__subtoggle neu-pressed">
+              {project.subsections.map((s, i) => (
+                <button
+                  key={s.id}
+                  className={`modal__subtoggle-btn ${i === subIndex ? 'is-active' : ''}`}
+                  onClick={() => setSubIndex(i)}
+                >
+                  {s.label}
+                </button>
+              ))}
+            </div>
+          )}
+
           <ul className="modal__highlights">
-            {project.highlights.map((h) => (
+            {highlights.map((h) => (
               <li key={h}>{h}</li>
             ))}
           </ul>

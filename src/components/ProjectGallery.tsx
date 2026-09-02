@@ -1,20 +1,24 @@
-import { useState } from 'react'
-import type { Project } from '../data/projects'
+import { useEffect, useState } from 'react'
 
 interface Props {
-  project: Project
+  images: string[]
+  alt: string
+  emoji: string
   className?: string
 }
 
-export function ProjectGallery({ project, className = '' }: Props) {
-  const images = project.images ?? []
+export function ProjectGallery({ images, alt, emoji, className = '' }: Props) {
   const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    setIndex(0)
+  }, [images])
 
   if (images.length === 0) {
     return (
       <div className={`project-thumb ${className}`}>
         <span className="project-thumb__emoji" aria-hidden="true">
-          {project.emoji}
+          {emoji}
         </span>
       </div>
     )
@@ -22,7 +26,7 @@ export function ProjectGallery({ project, className = '' }: Props) {
 
   return (
     <div className={`project-thumb ${className}`}>
-      <img src={images[index]} alt={`${project.title} — photo ${index + 1}`} />
+      <img src={images[index]} alt={`${alt} — photo ${index + 1}`} />
 
       {images.length > 1 && (
         <div className="project-gallery__dots">

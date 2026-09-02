@@ -18,8 +18,18 @@
 .greeting__word {
   display: inline-block;
   min-width: 6ch;
-  font-variant-ligatures: none;
-  text-shadow: 1.5px 0 var(--accent-2-glow), -1.5px 0 var(--accent-4-glow);
+  animation: greeting-in 0.4s ease;
+}
+
+@keyframes greeting-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .greeting__wave {
