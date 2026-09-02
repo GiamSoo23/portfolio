@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { CloseIcon, MenuIcon } from './icons'
 import './Navbar.css'
 
 const LINKS = [
@@ -9,7 +8,6 @@ const LINKS = [
 ]
 
 export function Navbar() {
-  const [open, setOpen] = useState(false)
   const [active, setActive] = useState('home')
   const [scrolled, setScrolled] = useState(false)
 
@@ -39,7 +37,6 @@ export function Navbar() {
   }, [])
 
   const handleNavigate = (id: string) => {
-    setOpen(false)
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
   }
 
@@ -57,31 +54,7 @@ export function Navbar() {
             </button>
           ))}
         </nav>
-
-        <button
-          className="navbar__toggle neu-icon-btn"
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Toggle menu"
-        >
-          {open ? <CloseIcon /> : <MenuIcon />}
-        </button>
       </div>
-
-      {open && (
-        <div className="navbar__mobile container">
-          <div className="navbar__mobile-panel neu-flat">
-            {LINKS.map((link) => (
-              <button
-                key={link.id}
-                className={`navbar__link navbar__link--mobile ${active === link.id ? 'is-active' : ''}`}
-                onClick={() => handleNavigate(link.id)}
-              >
-                {link.label}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
     </header>
   )
 }
