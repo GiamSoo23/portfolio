@@ -6,6 +6,8 @@ const VAR_MAP: Record<AccentColor, { color: string; glow: string }> = {
   blue: { color: 'var(--accent-2)', glow: 'var(--accent-2-glow)' },
   teal: { color: 'var(--accent-3)', glow: 'var(--accent-3-glow)' },
   violet: { color: 'var(--accent-4)', glow: 'var(--accent-4-glow)' },
+  pink: { color: 'var(--accent-5)', glow: 'var(--accent-5-glow)' },
+  gold: { color: 'var(--accent-6)', glow: 'var(--accent-6-glow)' },
 }
 
 export function accentStyle(accent: AccentColor): CSSProperties {

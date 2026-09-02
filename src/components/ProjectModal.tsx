@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { accentStyle } from '../data/accentColors'
 import type { Project } from '../data/projects'
 import { CloseIcon } from './icons'
+import { ProjectThumb } from './ProjectThumb'
 
 interface Props {
   project: Project
@@ -31,39 +32,42 @@ export function ProjectModal({ project, onClose }: Props) {
         style={accentStyle(project.accent)}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="project-card__accent-bar" />
         <button className="modal__close neu-icon-btn" onClick={onClose} aria-label="Close">
           <CloseIcon />
         </button>
 
-        <p className="project-card__role">{project.role}</p>
-        <h3 id="modal-title" className="modal__title">
-          {project.title}
-        </h3>
-        <p className="modal__meta">
-          {project.period}
-          {project.location ? ` · ${project.location}` : ''}
-        </p>
+        <ProjectThumb project={project} className="project-thumb--modal" />
 
-        <ul className="modal__highlights">
-          {project.highlights.map((h) => (
-            <li key={h}>{h}</li>
-          ))}
-        </ul>
+        <div className="modal__content">
+          <p className="project-card__role">{project.role}</p>
+          <h3 id="modal-title" className="modal__title">
+            {project.title}
+          </h3>
+          <p className="modal__meta">
+            {project.period}
+            {project.location ? ` · ${project.location}` : ''}
+          </p>
 
-        <div className="project-card__tags modal__tags">
-          {project.tech.map((tech) => (
-            <span key={tech} className="tag neu-pressed">
-              {tech}
-            </span>
-          ))}
+          <ul className="modal__highlights">
+            {project.highlights.map((h) => (
+              <li key={h}>{h}</li>
+            ))}
+          </ul>
+
+          <div className="project-card__tags modal__tags">
+            {project.tech.map((tech) => (
+              <span key={tech} className="tag neu-pressed">
+                {tech}
+              </span>
+            ))}
+          </div>
+
+          {project.link && (
+            <a className="neu-btn modal__link" href={project.link} target="_blank" rel="noreferrer">
+              Visit Project
+            </a>
+          )}
         </div>
-
-        {project.link && (
-          <a className="neu-btn modal__link" href={project.link} target="_blank" rel="noreferrer">
-            Visit Project
-          </a>
-        )}
       </div>
     </div>
   )

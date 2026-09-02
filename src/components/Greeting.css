@@ -17,8 +17,9 @@
 
 .greeting__word {
   display: inline-block;
-  min-width: 3ch;
-  animation: greeting-in 0.45s ease;
+  min-width: 6ch;
+  font-variant-ligatures: none;
+  text-shadow: 1.5px 0 var(--accent-2-glow), -1.5px 0 var(--accent-4-glow);
 }
 
 .greeting__wave {
@@ -26,17 +27,6 @@
   font-size: 1.3rem;
   transform-origin: 70% 70%;
   animation: wave 2.2s ease-in-out infinite;
-}
-
-@keyframes greeting-in {
-  from {
-    opacity: 0;
-    transform: translateY(6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 @keyframes wave {

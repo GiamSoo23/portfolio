@@ -1,4 +1,4 @@
-export type AccentColor = 'violet' | 'blue' | 'teal' | 'orange'
+export type AccentColor = 'violet' | 'blue' | 'teal' | 'orange' | 'pink' | 'gold'
 
 export interface Project {
   id: string
@@ -11,6 +11,9 @@ export interface Project {
   highlights: string[]
   link?: string
   accent: AccentColor
+  /** Path to a project image (e.g. imported from src/assets/projects). Falls back to `emoji` when absent. */
+  image?: string
+  emoji: string
 }
 
 export const projects: Project[] = [
@@ -24,6 +27,7 @@ export const projects: Project[] = [
       'Human-Computer Interaction research building mixed-reality study experiences on Magic Leap 2, as part of a 6-person team directed by Julia Woodward.',
     tech: ['C#', 'Unity', 'Magic Leap 2', 'Ultraleap'],
     accent: 'violet',
+    emoji: '🥽',
     highlights: [
       'Built a new mixed-reality study phase end-to-end on Magic Leap 2 within a phase-pipeline architecture, developing director integration, completion UI, and hand-grabbable prop prefabs.',
       'Diagnosed and fixed a broken two-handed grab interaction by tracing Unity physics through the Ultraleap Physical Hands package source, resolving grab-permission handling and kinematic vs. velocity-based rigidbody movement.',
@@ -39,6 +43,7 @@ export const projects: Project[] = [
       'A staff-operations PWA coordinating ~300 staff and volunteers across 10 role types for the 191-team FIRST Global Challenge.',
     tech: ['Next.js 16', 'TypeScript', 'Prisma', 'Supabase', 'PostgreSQL', 'Vercel'],
     accent: 'blue',
+    emoji: '🌐',
     highlights: [
       'Architected and built the platform from scratch to replace paper sheets and word-of-mouth coordination.',
       'Built a 29-table Prisma/Postgres schema powering digital judge evaluations, Step & Repeat photo tracking, and broadcast announcements.',
@@ -53,6 +58,7 @@ export const projects: Project[] = [
       'A cross-platform file-relay app moving files up to 500MB between Mac and Android through a private Supabase bucket.',
     tech: ['Swift', 'Kotlin', 'Supabase'],
     accent: 'teal',
+    emoji: '🔁',
     highlights: [
       'Built a Swift menu-bar app and a Kotlin Android share-target so files move between Mac and Android in one hotkey.',
       'Implemented signed-URL access and a single-file relay schema, enabling native Android share-sheet integration.',
@@ -68,11 +74,44 @@ export const projects: Project[] = [
       'Combining large-scale event production with long-term mentorship of a robotics team competing at FIRST Global.',
     tech: ['Event Production', 'Mentorship', 'Public Speaking', 'Fundraising'],
     accent: 'orange',
+    emoji: '🤝',
     highlights: [
       'Designed the AV plan for a 45-minute opening ceremony inspired by Super Bowl Halftime Show #50, producing 20 animations viewed by 3,000+ people.',
       'Drafted 12 role descriptions and trained 60 volunteers, empowering leaders to manage logistics for the 3-day Copa Ka’i competition.',
       'Mentored FIRST Global Team Chile, helping the team develop soft skills in communication and teamwork.',
       'Through the team’s TV, government, and radio appearances, helped raise ~$25,000 over the last two years to cover the team’s costs to compete.',
+    ],
+  },
+  {
+    id: 'shpe',
+    title: 'SHPE HackJam & Hack-A-Bull',
+    role: 'VP of Technology, SHPE at USF',
+    period: 'April 2025 — April 2026',
+    location: 'Tampa, FL',
+    summary:
+      'Directing strategic vision for two annual hackathons — HackJam and Hack-A-Bull — securing funding and shaping the tech behind the attendee experience.',
+    tech: ['Event Strategy', 'Sponsorship', 'Product Concept', 'NFC'],
+    accent: 'pink',
+    emoji: '🚀',
+    highlights: [
+      'Direct strategic vision for 2 annual hackathons, HackJam and Hack-A-Bull, obtaining $20,000 through partnerships with SHPE, MLH, and SASE, and companies like Microsoft, Velera, and Amgen, impacting 515 students.',
+      'Developed the concept for the Hackabull Web and Mobile App, supporting brainstorming, design, and testing of event schedules, participant resources, and NFC-based attendee networking through participant lanyards.',
+    ],
+  },
+  {
+    id: 'panelly',
+    title: 'Panelly — Solar Savings Estimator',
+    role: 'Backend Lead',
+    period: 'July 2026',
+    summary:
+      'A solar-savings estimation pipeline combining the Google Solar API, EIA API, and Google Places to give homeowners a realistic savings estimate.',
+    tech: ['Next.js', 'Google Solar API', 'EIA API', 'Zod'],
+    accent: 'gold',
+    emoji: '☀️',
+    highlights: [
+      'Built the core solar-savings estimation pipeline using the Google Solar API, EIA API, and Google Places, adding a fallback for API coverage gaps.',
+      'Excluded the recently repealed federal solar tax credit after researching current policy, keeping estimates accurate.',
+      'Led and mentored a 4-person team as the sole backend developer, defining a shared Zod contract that let teammates build the UI, database, and gamification in parallel through a mid-project pivot in input design.',
     ],
   },
 ]
