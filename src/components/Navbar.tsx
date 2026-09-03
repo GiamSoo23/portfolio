@@ -43,7 +43,7 @@ export function Navbar() {
   return (
     <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="container navbar__inner">
-        <nav className="navbar__links neu-flat">
+        <nav className="navbar__links">
           {LINKS.map((link) => (
             <button
               key={link.id}
