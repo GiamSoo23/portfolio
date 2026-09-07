@@ -45,7 +45,13 @@
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
+  cursor: pointer;
   transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.project-card:focus-visible {
+  outline: 2px solid var(--card-accent);
+  outline-offset: 3px;
 }
 
 .project-card:hover {

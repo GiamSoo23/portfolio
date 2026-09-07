@@ -14,7 +14,19 @@ export function ProjectCard({ project, onExpand }: Props) {
   const sub = project.subsections?.[subIndex]
 
   return (
-    <article className="project-card neu-raised" style={accentStyle(project.accent)}>
+    <article
+      className="project-card neu-raised"
+      style={accentStyle(project.accent)}
+      onClick={() => onExpand(project, subIndex)}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault()
+          onExpand(project, subIndex)
+        }
+      }}
+    >
       <div className="project-thumb-wrap">
         <ProjectThumb project={project} overrideSrc={sub?.images[0]} />
         {project.currentlyWorking && (
@@ -59,7 +71,13 @@ export function ProjectCard({ project, onExpand }: Props) {
         </div>
       </div>
 
-      <button className="project-card__expand neu-btn" onClick={() => onExpand(project, subIndex)}>
+      <button
+        className="project-card__expand neu-btn"
+        onClick={(e) => {
+          e.stopPropagation()
+          onExpand(project, subIndex)
+        }}
+      >
         View Details <ArrowRightIcon size={16} />
       </button>
     </article>
