@@ -11,8 +11,8 @@ const CONTACT_METHODS = [
   {
     icon: LinkedInIcon,
     label: 'LinkedIn',
-    value: '/in/gregory-ramirez',
-    href: 'https://linkedin.com/in/gregory-ramirez/',
+    value: '/in/gregoryramirezf',
+    href: 'https://www.linkedin.com/in/gregoryramirezf/',
   },
   {
     icon: GitHubIcon,

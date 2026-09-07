@@ -42,7 +42,7 @@ export function Hero() {
             </a>
             <a
               className="neu-icon-btn hero__social"
-              href="https://linkedin.com/in/gregory-ramirez/"
+              href="https://www.linkedin.com/in/gregoryramirezf/"
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"
