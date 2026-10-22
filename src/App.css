@@ -46,82 +46,23 @@ html {
   padding-bottom: 26px;
 }
 
-.volunteer__body .timeline__link {
+.volunteer__body .text-link {
   margin-top: 16px;
 }
 
-/* --- Hackathon timeline and shared sub-section headings --- */
+/* --- Shared sub-section headings and inline links --- */
 
-.timeline,
 .skills__section {
   margin-top: 70px;
 }
 
-.timeline__title {
+.section-heading {
   font-size: clamp(1.3rem, 3vw, 1.6rem);
   font-weight: 800;
   letter-spacing: -0.02em;
 }
 
-.timeline__list {
-  position: relative;
-  margin-top: 28px;
-  padding-left: 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  max-width: 720px;
-}
-
-.timeline__list::before {
-  content: '';
-  position: absolute;
-  left: 7px;
-  top: 8px;
-  bottom: 8px;
-  width: 2px;
-  background: rgba(154, 161, 177, 0.25);
-}
-
-.timeline__item {
-  position: relative;
-}
-
-.timeline__dot {
-  position: absolute;
-  left: -28px;
-  top: 22px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 0 4px var(--bg);
-}
-
-.timeline__card {
-  padding: 18px 22px;
-}
-
-.timeline__name {
-  font-weight: 700;
-  font-size: 1.02rem;
-}
-
-.timeline__meta {
-  margin-top: 4px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--accent);
-}
-
-.timeline__desc {
-  margin-top: 8px;
-  color: var(--text-secondary);
-  line-height: 1.55;
-  font-size: 0.93rem;
-}
-
-.timeline__link {
+.text-link {
   margin-top: 10px;
   display: inline-flex;
   align-items: center;
@@ -131,7 +72,7 @@ html {
   color: var(--accent-2);
 }
 
-.timeline__link:hover {
+.text-link:hover {
   text-decoration: underline;
 }
 
@@ -255,37 +196,6 @@ html {
   font-size: 0.88rem;
   line-height: 1.5;
   color: var(--text-secondary);
-}
-
-.awards {
-  margin-top: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  max-width: 720px;
-}
-
-.award {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 16px 20px;
-}
-
-.award__icon {
-  font-size: 1.4rem;
-}
-
-.award__name {
-  flex: 1;
-  font-weight: 600;
-  line-height: 1.4;
-}
-
-.award__year {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--accent-6);
 }
 
 /* --- Home: about, education, page cards --- */

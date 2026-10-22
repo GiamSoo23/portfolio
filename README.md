@@ -8,9 +8,9 @@ Hash-routed (`#/experience`), so deep links survive a refresh on GitHub Pages.
 
 - **Home** (`#/`): intro, "Currently" strip, about, education, a card for each page, and contact.
 - **Experience** (`#/experience`): research and engineering roles.
-- **Projects** (`#/projects`): hackathon builds and side projects, plus a hackathon timeline.
+- **Projects** (`#/projects`): hackathon builds and side projects.
 - **Leadership** (`#/leadership`): SHPE at USF, FIRST Global, Copa Ka'i, IBM Z.
-- **Skills** (`#/skills`): skill groups linked to where each one was used, certifications, and awards.
+- **Skills** (`#/skills`): skill groups linked to where each one was used, plus certifications and badges.
 - **Volunteering** (`#/volunteering`): community and outreach events. Hidden from the navbar until an entry is published.
 
 Content lives in `src/data/`. Set `draft: true` on an entry to keep it off the site.

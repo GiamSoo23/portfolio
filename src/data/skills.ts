@@ -38,7 +38,6 @@ export const skillGroups: SkillGroup[] = [
       { name: 'Python', usedIn: [MOLES] },
       { name: 'C++', usedIn: [MOLES] },
       { name: 'C#', usedIn: [ENCODE] },
-      // TODO(Gregory): where was C used? Add it back here once it appears in an entry.
       { name: 'Swift', usedIn: [MOX] },
       { name: 'Kotlin', usedIn: [MOX] },
       { name: 'SQL', usedIn: [FGC_PLATFORM] },
@@ -159,16 +158,4 @@ export const certifications: Certification[] = [
     issuer: 'Microsoft',
     status: 'Planned',
   },
-]
-
-export interface Award {
-  id: string
-  name: string
-  year: string
-}
-
-export const awards: Award[] = [
-  // TODO(Gregory): which award or category was the FIRST Global Challenge Gold Medal for?
-  { id: 'fgc-gold', name: 'FIRST Global Challenge Gold Medal', year: '2023' },
-  { id: 'math-olympiad', name: 'National Math Olympiad (Chile), Silver Medal', year: '2020' },
 ]

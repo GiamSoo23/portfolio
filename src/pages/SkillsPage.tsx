@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { PageHeader } from '../components/PageHeader'
 import { accentStyle } from '../data/accentColors'
-import { awards, certifications, skillGroups, type SkillGroup, type SkillUse } from '../data/skills'
+import { certifications, skillGroups, type SkillGroup, type SkillUse } from '../data/skills'
 
 function UsedInLink({ use }: { use: SkillUse }) {
   if (!use.href) return <>{use.label}</>
@@ -84,7 +84,7 @@ export function SkillsPage() {
         </div>
 
         <div className="skills__section" data-entry-id="certifications" tabIndex={-1}>
-          <h2 className="timeline__title">Certifications and badges</h2>
+          <h2 className="section-heading">Certifications and badges</h2>
           <div className="certs__grid">
             {certifications.map((cert) => (
               <div key={cert.id} className="cert neu-raised-sm">
@@ -96,28 +96,13 @@ export function SkillsPage() {
                 <p className="cert__issuer">{cert.issuer}</p>
                 {cert.note && <p className="cert__note">{cert.note}</p>}
                 {cert.verifyUrl && (
-                  <a className="timeline__link" href={cert.verifyUrl} target="_blank" rel="noreferrer">
+                  <a className="text-link" href={cert.verifyUrl} target="_blank" rel="noreferrer">
                     Verify
                   </a>
                 )}
               </div>
             ))}
           </div>
-        </div>
-
-        <div className="skills__section">
-          <h2 className="timeline__title">Awards</h2>
-          <ul className="awards">
-            {awards.map((award) => (
-              <li key={award.id} className="award neu-raised-sm">
-                <span className="award__icon" aria-hidden="true">
-                  🏅
-                </span>
-                <span className="award__name">{award.name}</span>
-                <span className="award__year">{award.year}</span>
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
     </section>

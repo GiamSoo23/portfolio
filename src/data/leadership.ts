@@ -29,18 +29,17 @@ export const leadership: Entry[] = [
     title: 'FIRST Global',
     role: 'Mentor and Production Volunteer',
     summary:
-      'Seven years in the FIRST Global community, first as a competitor and now as a mentor, developer, and production volunteer.',
+      'Seven years in the FIRST Global community, first as a competitor, then as a mentor, and now as a developer and production volunteer.',
     tech: ['Mentorship', 'Public Speaking', 'Fundraising', 'Video Production'],
     accent: 'red',
     emoji: '🤖',
-    currentlyWorking: true,
     subsections: [
       {
         id: 'team-chile',
         label: 'Team Chile',
-        role: 'Mentor', // TODO(Gregory): "Mentor" or "Coordinator"? The site says Mentor, other materials say Coordinator.
+        role: 'Mentor',
         summary: 'Long-term mentorship of the Chilean national robotics team, on both soft skills and fundraising.',
-        period: 'March 2025 - Present',
+        period: 'March 2025 - October 2026',
         location: 'Chile',
         images: [{ src: asset('teamchile-1.jpg'), alt: 'Team Chile on stage in front of the FIRST Global Challenge backdrop' }],
         highlights: [
@@ -64,11 +63,11 @@ export const leadership: Entry[] = [
         ],
       },
       {
-        id: 'production-earlier',
-        // TODO(Gregory): which year was this? (The photos suggest FGC 2025 in Panama.) Then rename the label to e.g. "FGC 2025" and add a period.
-        label: 'Earlier FGC',
+        id: 'production-2024',
+        label: 'FGC 2024',
         role: 'Production Volunteer',
-        summary: 'Photography and video for teams and key moments at the FIRST Global Challenge.',
+        summary: 'Made videos for the FIRST Global Challenge, capturing teams and key moments of the competition.',
+        period: '2024',
         images: [
           { src: asset('productionfgc-1.jpeg'), alt: 'A competition robot from team 21565 on the field' },
           { src: asset('productionfgc-2.jpeg'), alt: 'Opening of the FIRST Global Challenge arena, with the flag of Panama on the center screen' },

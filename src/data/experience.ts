@@ -19,7 +19,7 @@ export const experience: Entry[] = [
     highlights: [
       'Built a new mixed-reality study phase end-to-end on Magic Leap 2 within a phase-pipeline architecture, developing director integration, completion UI, and hand-grabbable prop prefabs.',
       'Diagnosed and fixed a broken two-handed grab interaction by tracing Unity physics through the Ultraleap Physical Hands package source, resolving grab-permission handling and kinematic vs. velocity-based rigidbody movement.',
-      // TODO(Gregory): confirm you want this here: 'Selected for the CRA UR2PhD Undergraduate Research Training Course (Fall 2026).'
+      'Selected for the Computing Research Association (CRA) UR2PhD Undergraduate Research Training Course (Fall 2026).'
     ],
   },
   {
@@ -49,8 +49,8 @@ export const experience: Entry[] = [
   {
     id: 'hackabull-app',
     title: 'Hackabull Attendee App',
-    role: 'TODO', // TODO(Gregory): your title, e.g. "Product Lead"
-    period: 'TODO', // TODO(Gregory): period
+    role: 'Project Manager',
+    period: 'January 2026 - April 2026',
     summary:
       "The official mobile app for Hackabull, USF's student-led hackathon, with the event schedule, participant resources, and attendee networking through NFC lanyards (tap two badges to connect). Published on Google Play.",
     // TODO(Gregory): confirm the framework (Expo / React Native?)
@@ -64,10 +64,7 @@ export const experience: Entry[] = [
       'Designed the NFC-based networking system that lets attendees exchange contact info by tapping their event lanyards.',
     ],
     team: ['Gabriel Fagundes Teixeira (engineering lead)', 'Ian Lopez (backend and dark mode)'],
-    // TODO(Gregory): this Google Play link returned 404 on Oct 22, 2026. Check the package id or that the listing is public.
-    links: [
-      { label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.hackabull.attendee' },
-    ],
-    draft: true,
+    // TODO(Gregory): this Google Play link returned 404 on Oct 22, 2026, so it is left out until the package id is fixed or the listing is public:
+    // links: [{ label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.hackabull.attendee' }],
   },
 ]

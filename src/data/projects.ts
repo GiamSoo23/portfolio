@@ -35,7 +35,7 @@ export const projects: Entry[] = [
     id: 'panelly',
     title: 'Panelly, Solar Savings Estimator',
     role: 'Backend Lead',
-    event: 'BloomKnights', // TODO(Gregory): confirm the hackathon name
+    event: 'BloomKnights',
     period: 'July 2026',
     summary:
       'A solar-savings estimation pipeline combining the Google Solar API, EIA API, and Google Places to give homeowners a realistic savings estimate.',
@@ -75,46 +75,5 @@ export const projects: Entry[] = [
       'Implemented signed-URL access and a single-file relay schema, enabling native Android share-sheet integration.',
     ],
     // TODO(Gregory): GitHub link
-  },
-]
-
-export interface Hackathon {
-  id: string
-  name: string
-  meta: string
-  description: string
-  /** Hash route to the card for this hackathon, when there is one. */
-  href?: string
-}
-
-/** Newest first. */
-export const hackathons: Hackathon[] = [
-  {
-    id: 'shellhacks-2026',
-    name: 'ShellHacks 2026',
-    meta: 'Florida International University, September 2026',
-    description: 'Built M.O.L.E.S., a sensor network that detects breathing under rubble.',
-    href: '#/projects/moles',
-  },
-  {
-    id: 'bloomknights',
-    name: 'BloomKnights', // TODO(Gregory): confirm the hackathon name
-    meta: 'July 2026',
-    description: 'Built Panelly, a solar savings estimator.',
-    href: '#/projects/panelly',
-  },
-  {
-    id: 'shpe-ai',
-    name: 'SHPE AI Hackathon by Rockwell Automation',
-    meta: '2026',
-    // TODO(Gregory): update with the result after SHPE National Convention, Oct 28-31
-    description: 'Advanced to the Simulation Round with an individual entry.',
-  },
-  {
-    id: 'organizer',
-    name: 'As an organizer: Hackabull and HackJam',
-    meta: 'USF and SHPE USF',
-    description: 'Part of the organizing team for both hackathons, including HackJam 26 on November 21, 2026.',
-    href: '#/leadership/shpe',
   },
 ]

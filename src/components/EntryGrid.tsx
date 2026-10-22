@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react'
+import { useState } from 'react'
 import { published, type Entry } from '../data/types'
 import { PageHeader } from './PageHeader'
 import { ProjectCard } from './ProjectCard'
@@ -10,11 +10,9 @@ interface Props {
   label: string
   title: string
   subtitle: string
-  /** Extra content rendered below the grid, e.g. the hackathon timeline. */
-  children?: ReactNode
 }
 
-export function EntryGrid({ entries, label, title, subtitle, children }: Props) {
+export function EntryGrid({ entries, label, title, subtitle }: Props) {
   const [active, setActive] = useState<{ entry: Entry; subIndex: number } | null>(null)
   const visible = published(entries)
 
@@ -32,8 +30,6 @@ export function EntryGrid({ entries, label, title, subtitle, children }: Props) 
             />
           ))}
         </div>
-
-        {children}
       </div>
 
       {active && (

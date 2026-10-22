@@ -48,7 +48,7 @@ export function VolunteeringPage() {
               <p className="project-card__summary">
                 Behind the camera with the Production team in Incheon. The full story lives on the Leadership page.
               </p>
-              <span className="timeline__link">
+              <span className="text-link">
                 Go to Leadership <ArrowRightIcon size={14} />
               </span>
             </div>
