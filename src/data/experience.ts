@@ -53,8 +53,7 @@ export const experience: Entry[] = [
     period: 'January 2026 - April 2026',
     summary:
       "The official mobile app for Hackabull, USF's student-led hackathon, with the event schedule, participant resources, and attendee networking through NFC lanyards (tap two badges to connect). Published on Google Play.",
-    // TODO(Gregory): confirm the framework (Expo / React Native?)
-    tech: ['Mobile App', 'NFC', 'Product Design', 'Google Sheets API'],
+    tech: ['React Native', 'Mobile App', 'NFC', 'Product Design', 'Google Sheets API'],
     accent: 'pink',
     emoji: '📱',
     // TODO(Gregory): add 2 to 4 app screenshots as public/projects/hackabull-app-1..4
