@@ -1,12 +1,19 @@
-# Gregory Ramírez Fuentes — Portfolio
+# Gregory Ramírez Fuentes | Portfolio
 
 Personal portfolio built with React + TypeScript + Vite, styled with a neumorphic ("soft UI") design system.
 
-## Sections
+## Pages
 
-- **Home** — intro, photo, and links.
-- **Projects** — 4 featured projects, each with a details popup.
-- **Contact** — contact methods and current work.
+Hash-routed (`#/experience`), so deep links survive a refresh on GitHub Pages.
+
+- **Home** (`#/`): intro, "Currently" strip, about, education, a card for each page, and contact.
+- **Experience** (`#/experience`): research and engineering roles.
+- **Projects** (`#/projects`): hackathon builds and side projects, plus a hackathon timeline.
+- **Leadership** (`#/leadership`): SHPE at USF, FIRST Global, Copa Ka'i, IBM Z.
+- **Skills** (`#/skills`): skill groups linked to where each one was used, certifications, and awards.
+- **Volunteering** (`#/volunteering`): community and outreach events. Hidden from the navbar until an entry is published.
+
+Content lives in `src/data/`. Set `draft: true` on an entry to keep it off the site.
 
 ## Development
 
@@ -24,14 +31,6 @@ npm run build
 ## Deployment
 
 Deploys automatically to GitHub Pages via GitHub Actions (`.github/workflows/deploy.yml`) on every push to `main`.
-
-## Adding your photo
-
-Replace the placeholder icon in `src/components/Hero.tsx`:
-
-1. Drop your photo at `src/assets/avatar.jpg` (or `.png`).
-2. In `Hero.tsx`, import it: `import avatar from '../assets/avatar.jpg'`.
-3. Swap the `<UserIcon />` placeholder for `<img src={avatar} alt="Gregory Ramírez Fuentes" className="hero__photo-img" />`.
 
 ## Neumorphism resources used as reference
 
