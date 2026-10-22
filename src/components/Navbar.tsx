@@ -1,33 +1,15 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { pages, type PageId } from '../data/site'
+import { routeHref } from '../hooks/useHashRoute'
 import './Navbar.css'
 
-const LINKS = [
-  { id: 'home', label: 'Home' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'contact', label: 'Contact' },
-]
+interface Props {
+  active: PageId
+}
 
-export function Navbar() {
-  const [active, setActive] = useState('home')
+export function Navbar({ active }: Props) {
   const [scrolled, setScrolled] = useState(false)
-
-  useEffect(() => {
-    const sections = LINKS.map((l) => document.getElementById(l.id)).filter(
-      (el): el is HTMLElement => el !== null,
-    )
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActive(entry.target.id)
-        })
-      },
-      { rootMargin: '-40% 0px -50% 0px' },
-    )
-
-    sections.forEach((s) => observer.observe(s))
-    return () => observer.disconnect()
-  }, [])
+  const navRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12)
@@ -36,23 +18,30 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const handleNavigate = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-  }
+  // On narrow screens the pill row scrolls sideways; keep the active link centered in view.
+  useEffect(() => {
+    const nav = navRef.current
+    const link = nav?.querySelector<HTMLElement>('[aria-current="page"]')
+    if (!nav || !link) return
+    nav.scrollTo({ left: link.offsetLeft - (nav.clientWidth - link.offsetWidth) / 2, behavior: 'smooth' })
+  }, [active])
 
   return (
     <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="container navbar__inner">
-        <nav className="navbar__links neu-flat">
-          {LINKS.map((link) => (
-            <button
-              key={link.id}
-              className={`navbar__link ${active === link.id ? 'is-active' : ''}`}
-              onClick={() => handleNavigate(link.id)}
-            >
-              {link.label}
-            </button>
-          ))}
+        <nav ref={navRef} className="navbar__links neu-flat" aria-label="Main">
+          {pages
+            .filter((page) => page.visible)
+            .map((page) => (
+              <a
+                key={page.id}
+                href={routeHref(page.id)}
+                className={`navbar__link ${active === page.id ? 'is-active' : ''}`}
+                aria-current={active === page.id ? 'page' : undefined}
+              >
+                {page.label}
+              </a>
+            ))}
         </nav>
       </div>
     </header>

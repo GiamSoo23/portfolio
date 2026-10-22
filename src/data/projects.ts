@@ -1,185 +1,63 @@
-const asset = (name: string) => `${import.meta.env.BASE_URL}projects/${name}`
+import { asset, type Entry } from './types'
 
-const encode1 = asset('encode-1.jpeg')
-const fgcops1 = asset('fgcops-1.jpeg')
-const fgcops2 = asset('fgcops-2.jpeg')
-const fgcops3 = asset('fgcops-3.jpeg')
-const fgcops4 = asset('fgcops-4.jpeg')
-const mox1 = asset('mox-1.jpg')
-const mox2 = asset('mox-2.jpeg')
-const mox3 = asset('mox-3.jpg')
-const panelly1 = asset('panelly-1.jpeg')
-const panelly2 = asset('panelly-2.jpeg')
-const panelly3 = asset('panelly-3.jpeg')
-const panelly4 = asset('panelly-4.jpg')
-const productioncopa1 = asset('productioncopa-1.jpeg')
-const productioncopa2 = asset('productioncopa-2.jpg')
-const productioncopa3 = asset('productioncopa-3.jpeg')
-const productioncopa4 = asset('productioncopa-4.jpeg')
-const productionfgc1 = asset('productionfgc-1.jpeg')
-const productionfgc2 = asset('productionfgc-2.jpeg')
-const productionfgc4 = asset('productionfgc-4.jpg')
-const shpe1 = asset('shpe-1.jpeg')
-const shpe2 = asset('shpe-2.jpeg')
-const shpe3 = asset('shpe-3.jpeg')
-const shpe4 = asset('shpe-4.jpeg')
-const teamchile1 = asset('teamchile-1.jpg')
-
-export type AccentColor = 'violet' | 'blue' | 'teal' | 'orange' | 'pink' | 'gold' | 'red' | 'green'
-
-export interface ProjectSubsection {
-  id: string
-  label: string
-  period?: string
-  location?: string
-  images: string[]
-  highlights: string[]
-}
-
-export interface Project {
-  id: string
-  title: string
-  role: string
-  period: string
-  location?: string
-  summary: string
-  tech: string[]
-  /** Used when the project has a single flat gallery (no subsections). */
-  highlights?: string[]
-  link?: string
-  accent: AccentColor
-  /** Project photos, served from public/projects/. First image is used as the card thumbnail; all are shown in the modal gallery. Falls back to `emoji` when empty. Ignored when `subsections` is set. */
-  images?: string[]
-  /** When set, the modal shows a toggle to switch between sub-galleries (e.g. two different roles under one card). */
-  subsections?: ProjectSubsection[]
-  emoji: string
-  /** Shows a "Currently Working" badge on the card. */
-  currentlyWorking?: boolean
-}
-
-export const projects: Project[] = [
+export const projects: Entry[] = [
   {
-    id: 'encode-lab',
-    title: 'EnCoDe Lab — Mixed Reality Research',
-    role: 'Research Assistant',
-    period: 'May 2026 — Present',
-    location: 'USF, Tampa, FL',
+    id: 'moles',
+    title: 'M.O.L.E.S. (Multi-Observation Link for Entrapped Survivors)',
+    role: 'Hardware & Embedded Developer',
+    event: 'ShellHacks 2026',
+    period: 'September 2026',
+    location: 'Florida International University, Miami, FL',
     summary:
-      'Human-Computer Interaction research building mixed-reality study experiences on Magic Leap 2, as part of a 6-person team directed by Julia Woodward.',
-    tech: ['C#', 'Unity', 'Magic Leap 2', 'Ultraleap'],
-    accent: 'violet',
-    emoji: '🥽',
-    currentlyWorking: true,
-    images: [encode1],
-    highlights: [
-      'Built a new mixed-reality study phase end-to-end on Magic Leap 2 within a phase-pipeline architecture, developing director integration, completion UI, and hand-grabbable prop prefabs.',
-      'Diagnosed and fixed a broken two-handed grab interaction by tracing Unity physics through the Ultraleap Physical Hands package source, resolving grab-permission handling and kinematic vs. velocity-based rigidbody movement.',
-    ],
-  },
-  {
-    id: 'first-global',
-    title: 'FIRST Global Staff Operations Platform',
-    role: 'Lead Developer',
-    period: 'April 2026 — Present',
-    location: 'Remote, South Korea',
-    summary:
-      'A staff-operations PWA coordinating ~300 staff and volunteers across 10 role types for the 191-team FIRST Global Challenge.',
-    tech: ['Next.js 16', 'TypeScript', 'Prisma', 'Supabase', 'PostgreSQL', 'Vercel'],
-    accent: 'blue',
-    emoji: '🌐',
-    currentlyWorking: true,
-    images: [fgcops1, fgcops2, fgcops3, fgcops4],
-    highlights: [
-      'Architected and built the platform from scratch to replace paper sheets and word-of-mouth coordination.',
-      'Built a 29-table Prisma/Postgres schema powering digital judge evaluations, Step & Repeat photo tracking, and broadcast announcements.',
-    ],
-  },
-  {
-    id: 'team-chile',
-    title: 'FIRST Global Team Chile',
-    role: 'Mentor',
-    period: 'March 2025 — Present',
-    location: 'Chile',
-    summary: 'Long-term mentorship of a robotics team competing at FIRST Global, on both soft skills and fundraising.',
-    tech: ['Mentorship', 'Public Speaking', 'Fundraising'],
+      'A set of small wireless sensors you place around a pile of rubble to detect the tiny movements of someone breathing underneath, inspired by the 2026 earthquakes in Venezuela.',
+    tech: ['ESP32', 'UWB', 'C++', 'Python', 'Signal Processing', '3D Printing'],
     accent: 'red',
-    emoji: '🇨🇱',
-    currentlyWorking: true,
-    images: [teamchile1],
-    highlights: [
-      'Mentored FIRST Global Team Chile, helping the team develop soft skills in communication and teamwork.',
-      'Through the team’s TV, government, and radio appearances, helped raise ~$25,000 over the last two years to cover the team’s costs to compete.',
+    emoji: '📡',
+    images: [
+      { src: asset('moles-1.jpeg'), alt: 'M.O.L.E.S. cover: three sensor nodes linked over a pile of rubble, ShellHacks 2026' },
+      { src: asset('moles-2.jpeg'), alt: 'Three sensor nodes in their 3D-printed cases placed around a bin of rubble for testing' },
+      { src: asset('moles-3.jpeg'), alt: 'Wiring an ESP32 board and radio module inside a 3D-printed sensor case' },
+      { src: asset('moles-4.jpeg'), alt: 'The breathing simulator used for testing, built inside a 3D-printed box' },
+      { src: asset('moles-5.jpeg'), alt: 'Graph showing a confirmed breathing signal at 20 breaths per minute, with two of three sensor links agreeing' },
     ],
-  },
-  {
-    id: 'shpe',
-    title: 'SHPE HackJam & Hack-A-Bull',
-    role: 'VP of Technology, SHPE at USF',
-    period: 'April 2025 — April 2026',
-    location: 'Tampa, FL',
-    summary:
-      'Directing strategic vision for two annual hackathons — HackJam and Hack-A-Bull — securing funding and shaping the tech behind the attendee experience.',
-    tech: ['Event Strategy', 'Sponsorship', 'Product Concept', 'NFC'],
-    accent: 'pink',
-    emoji: '🚀',
-    images: [shpe1, shpe2, shpe3, shpe4],
     highlights: [
-      'Direct strategic vision for 2 annual hackathons, HackJam and Hack-A-Bull, obtaining $20,000 through partnerships with SHPE, MLH, and SASE, and companies like Microsoft, Velera, and Amgen, impacting 515 students.',
-      'Developed the concept for the Hackabull Web and Mobile App, supporting brainstorming, design, and testing of event schedules, participant resources, and NFC-based attendee networking through participant lanyards.',
+      'Each sensor sits in a 3D-printed case. Because the sensors watch the same spot from different angles, they double-check each other before confirming a signal.',
+      "Streamed data from three ESP32 boards at the same time. To stay within the boards' limits, averaged the readings over 30-second windows and used frequency analysis to pick out breathing-rate movement.",
+      'In testing, the sensors detected our breathing simulator at 20 breaths per minute, with multiple sensors agreeing on the signal.',
     ],
-  },
-  {
-    id: 'production',
-    title: 'Event Production',
-    role: 'Production Coordinator',
-    period: 'Jan 2024 — Present',
-    tech: ['Event Production', 'AV Design', 'Logistics', 'Team Training'],
-    accent: 'orange',
-    emoji: '🎬',
-    summary: 'Live event production across two very different stages: a robotics world championship and a national opening ceremony.',
-    subsections: [
-      {
-        id: 'fgc',
-        label: 'FIRST Global Challenge',
-        images: [productionfgc1, productionfgc2, productionfgc4],
-        highlights: [
-          'Took photography and video for the event, capturing teams and key moments across the competition.',
-          'Helped organize the Step & Repeat for teams’ videos over the 3-day event.',
-        ],
-      },
-      {
-        id: 'copa-kai',
-        label: 'Copa Ka’i',
-        period: 'Jan 2024 — Jun 2024',
-        location: 'Maracaibo, Venezuela',
-        images: [productioncopa1, productioncopa2, productioncopa3, productioncopa4],
-        highlights: [
-          'Designed the AV plan for a 45-minute opening ceremony inspired by Super Bowl Halftime Show #50, producing 20 animations viewed by 3,000+ people.',
-          'Drafted 12 role descriptions and trained 60 volunteers, empowering leaders to manage logistics for the 3-day Copa Ka’i competition.',
-        ],
-      },
+    team: ['Ian Lopez', 'Timothy Hawks', 'Jacob Bhatt'],
+    links: [
+      { label: 'Devpost', href: 'https://devpost.com/software/m-o-l-e-s-multi-observation-link-for-entrapped-survivors' },
+      // TODO(Gregory): GitHub repo link if public
     ],
   },
   {
     id: 'panelly',
-    title: 'Panelly — Solar Savings Estimator',
+    title: 'Panelly, Solar Savings Estimator',
     role: 'Backend Lead',
+    event: 'BloomKnights', // TODO(Gregory): confirm the hackathon name
     period: 'July 2026',
     summary:
       'A solar-savings estimation pipeline combining the Google Solar API, EIA API, and Google Places to give homeowners a realistic savings estimate.',
     tech: ['Next.js', 'Google Solar API', 'EIA API', 'Zod'],
     accent: 'gold',
     emoji: '☀️',
-    images: [panelly1, panelly2, panelly3, panelly4],
+    images: [
+      { src: asset('panelly-1.jpeg'), alt: 'Panelly landing page: "Turn your energy habits into a solar savings plan"' },
+      { src: asset('panelly-2.jpeg'), alt: 'Panelly home screen inviting the user to start the energy challenge' },
+      { src: asset('panelly-3.jpeg'), alt: 'Panelly Energy Quest, a game-style form that asks about the household' },
+      { src: asset('panelly-4.jpg'), alt: 'Group photo of hackathon participants' },
+    ],
     highlights: [
       'Built the core solar-savings estimation pipeline using the Google Solar API, EIA API, and Google Places, adding a fallback for API coverage gaps.',
       'Excluded the recently repealed federal solar tax credit after researching current policy, keeping estimates accurate.',
       'Led and mentored a 4-person team as the sole backend developer, defining a shared Zod contract that let teammates build the UI, database, and gamification in parallel through a mid-project pivot in input design.',
     ],
+    // TODO(Gregory): Devpost or GitHub link
   },
   {
     id: 'mox',
-    title: 'Mox — Cross-Platform File Relay',
+    title: 'Mox, Cross-Platform File Relay',
     role: 'Creator and Developer',
     period: 'May 2026',
     summary:
@@ -187,10 +65,56 @@ export const projects: Project[] = [
     tech: ['Swift', 'Kotlin', 'Supabase'],
     accent: 'teal',
     emoji: '🔁',
-    images: [mox1, mox2, mox3],
+    images: [
+      { src: asset('mox-1.jpg'), alt: 'Mox app icon' },
+      { src: asset('mox-2.jpeg'), alt: 'Mox menu-bar app on a Mac, showing a file just received from Android' },
+      { src: asset('mox-3.jpg'), alt: 'Mox Android app with a received file ready to save or share' },
+    ],
     highlights: [
       'Built a Swift menu-bar app and a Kotlin Android share-target so files move between Mac and Android in one hotkey.',
       'Implemented signed-URL access and a single-file relay schema, enabling native Android share-sheet integration.',
     ],
+    // TODO(Gregory): GitHub link
+  },
+]
+
+export interface Hackathon {
+  id: string
+  name: string
+  meta: string
+  description: string
+  /** Hash route to the card for this hackathon, when there is one. */
+  href?: string
+}
+
+/** Newest first. */
+export const hackathons: Hackathon[] = [
+  {
+    id: 'shellhacks-2026',
+    name: 'ShellHacks 2026',
+    meta: 'Florida International University, September 2026',
+    description: 'Built M.O.L.E.S., a sensor network that detects breathing under rubble.',
+    href: '#/projects/moles',
+  },
+  {
+    id: 'bloomknights',
+    name: 'BloomKnights', // TODO(Gregory): confirm the hackathon name
+    meta: 'July 2026',
+    description: 'Built Panelly, a solar savings estimator.',
+    href: '#/projects/panelly',
+  },
+  {
+    id: 'shpe-ai',
+    name: 'SHPE AI Hackathon by Rockwell Automation',
+    meta: '2026',
+    // TODO(Gregory): update with the result after SHPE National Convention, Oct 28-31
+    description: 'Advanced to the Simulation Round with an individual entry.',
+  },
+  {
+    id: 'organizer',
+    name: 'As an organizer: Hackabull and HackJam',
+    meta: 'USF and SHPE USF',
+    description: 'Part of the organizing team for both hackathons, including HackJam 26 on November 21, 2026.',
+    href: '#/leadership/shpe',
   },
 ]

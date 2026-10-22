@@ -1,3 +1,393 @@
 html {
   scroll-behavior: smooth;
 }
+
+:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 3px;
+}
+
+/* Headings only take focus programmatically on route change; no ring needed. */
+.page-title:focus {
+  outline: none;
+}
+
+/* --- Page shell --- */
+
+.projects.page {
+  padding: 40px 0 90px;
+}
+
+.page__empty {
+  margin-top: 36px;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+
+/* Cards that are plain links (home page cards, cross-links) rather than modal triggers. */
+.project-card--link {
+  color: inherit;
+}
+
+.project-card--link:focus-visible {
+  outline: 2px solid var(--card-accent);
+  outline-offset: 3px;
+}
+
+.project-card--static {
+  cursor: default;
+}
+
+.project-card--static:hover {
+  transform: none;
+}
+
+.volunteer__body {
+  padding-bottom: 26px;
+}
+
+.volunteer__body .timeline__link {
+  margin-top: 16px;
+}
+
+/* --- Hackathon timeline and shared sub-section headings --- */
+
+.timeline,
+.skills__section {
+  margin-top: 70px;
+}
+
+.timeline__title {
+  font-size: clamp(1.3rem, 3vw, 1.6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.timeline__list {
+  position: relative;
+  margin-top: 28px;
+  padding-left: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 720px;
+}
+
+.timeline__list::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: rgba(154, 161, 177, 0.25);
+}
+
+.timeline__item {
+  position: relative;
+}
+
+.timeline__dot {
+  position: absolute;
+  left: -28px;
+  top: 22px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--bg);
+}
+
+.timeline__card {
+  padding: 18px 22px;
+}
+
+.timeline__name {
+  font-weight: 700;
+  font-size: 1.02rem;
+}
+
+.timeline__meta {
+  margin-top: 4px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.timeline__desc {
+  margin-top: 8px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  font-size: 0.93rem;
+}
+
+.timeline__link {
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent-2);
+}
+
+.timeline__link:hover {
+  text-decoration: underline;
+}
+
+/* --- Skills --- */
+
+.skills__grid {
+  margin-top: 44px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.skill-group {
+  padding: 24px 26px;
+}
+
+.skill-group__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--card-accent);
+}
+
+.skill-group__chips {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-chip {
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.skill-chip--static {
+  border-radius: var(--radius-pill);
+  color: var(--text-secondary);
+}
+
+.skill-chip.is-active,
+.skill-chip:hover {
+  color: var(--card-accent);
+}
+
+.skill-group__used {
+  margin-top: 16px;
+  min-height: 1.5em;
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.skill-group__used-label {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.skill-group__used a {
+  color: var(--card-accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.skill-group__hint {
+  font-style: italic;
+}
+
+.certs__grid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.cert {
+  padding: 20px 22px;
+}
+
+.cert__status {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.cert__status--earned {
+  color: var(--accent-8);
+  background: color-mix(in srgb, var(--accent-8) 16%, transparent);
+}
+
+.cert__status--joining {
+  color: var(--accent-2);
+  background: color-mix(in srgb, var(--accent-2) 16%, transparent);
+}
+
+.cert__status--planned {
+  color: var(--text-secondary);
+  border: 1px dashed rgba(154, 161, 177, 0.5);
+}
+
+.cert__name {
+  margin-top: 12px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.cert__issuer {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.cert__note {
+  margin-top: 10px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.awards {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 720px;
+}
+
+.award {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+}
+
+.award__icon {
+  font-size: 1.4rem;
+}
+
+.award__name {
+  flex: 1;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.award__year {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-6);
+}
+
+/* --- Home: about, education, page cards --- */
+
+.home-about {
+  padding: 30px 0 70px;
+}
+
+.home-about__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.home-about__text {
+  margin-top: 16px;
+  max-width: 640px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.home-about .projects__title {
+  margin-top: 14px;
+}
+
+.education {
+  padding: 26px 28px;
+}
+
+.education__degree {
+  margin-top: 14px;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.education__school {
+  margin-top: 6px;
+  font-weight: 600;
+}
+
+.education__meta {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.home-pages .projects__title {
+  margin-top: 14px;
+}
+
+/* --- Footer --- */
+
+.footer {
+  padding: 28px 0 40px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.footer .container {
+  padding-top: 28px;
+  border-top: 1px solid rgba(107, 114, 128, 0.18);
+}
+
+.footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 22px;
+  font-weight: 600;
+}
+
+.footer__links a:hover {
+  color: var(--accent);
+}
+
+.footer__copy {
+  margin-top: 14px;
+}
+
+@media (min-width: 640px) {
+  .skills__grid,
+  .certs__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 860px) {
+  .home-about__inner {
+    grid-template-columns: 1.6fr 1fr;
+    gap: 56px;
+  }
+
+  .education {
+    margin-top: 34px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .certs__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

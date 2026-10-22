@@ -227,6 +227,13 @@
   line-height: 1.3;
 }
 
+.project-card__meta {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
 .project-card__summary {
   margin-top: 12px;
   color: var(--text-secondary);
@@ -237,6 +244,7 @@
 .project-card__subtoggle {
   margin-top: 14px;
   display: inline-flex;
+  flex-wrap: wrap;
   padding: 4px;
   gap: 4px;
   align-self: flex-start;
@@ -351,6 +359,7 @@
 .modal__subtoggle {
   margin-top: 18px;
   display: inline-flex;
+  flex-wrap: wrap;
   padding: 5px;
   gap: 4px;
 }
@@ -370,8 +379,15 @@
   box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
 }
 
+.modal__summary {
+  margin-top: 18px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
 .modal__highlights {
-  margin-top: 22px;
+  margin-top: 18px;
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -396,12 +412,25 @@
   background: var(--card-accent);
 }
 
+.modal__team {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
 .modal__tags {
   margin-top: 22px;
 }
 
-.modal__link {
+.modal__links {
   margin-top: 26px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.modal__link {
   display: inline-flex;
   padding: 12px 24px;
   font-weight: 700;
@@ -435,7 +464,7 @@
   }
 
   /* When the total number of cards is odd, give the trailing one its own row and
-     center it at normal card width instead of stretching it edge to edge — keeps
+     center it at normal card width instead of stretching it edge to edge. Keeps
      working automatically as cards are added. */
   .projects__grid > .project-card:last-child:nth-child(odd) {
     grid-column: 1 / -1;

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import './Greeting.css'
 
 const GREETINGS = ['Hi', 'Hola', 'Olá', 'Bonjour', 'Ciao', 'Hallo', 'こんにちは', '안녕하세요']
-const GLITCH_CHARS = '!<>-_\\/[]{}—=+*^?#$%&aeiouAEIOU'
+const GLITCH_CHARS = '!<>-_\\/[]{}=+*^?#$%&aeiouAEIOU'
 const HOLD_MS = 1500
 const FRAME_MS = 35
 

@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react'
-import type { AccentColor } from './projects'
+import type { AccentColor } from './types'
 
 const VAR_MAP: Record<AccentColor, { color: string; glow: string }> = {
   orange: { color: 'var(--accent)', glow: 'var(--accent-glow)' },

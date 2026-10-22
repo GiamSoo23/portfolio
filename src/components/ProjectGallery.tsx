@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react'
+import type { Photo } from '../data/types'
 import { ChevronLeftIcon, ChevronRightIcon } from './icons'
 
 interface Props {
-  images: string[]
-  alt: string
+  images: Photo[]
   emoji: string
   className?: string
 }
 
-export function ProjectGallery({ images, alt, emoji, className = '' }: Props) {
+export function ProjectGallery({ images, emoji, className = '' }: Props) {
   const [index, setIndex] = useState(0)
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export function ProjectGallery({ images, alt, emoji, className = '' }: Props) {
 
   return (
     <div className={`project-thumb ${className}`}>
-      <img src={images[index]} alt={`${alt} — photo ${index + 1}`} />
+      <img src={images[index].src} alt={images[index].alt} />
 
       {images.length > 1 && (
         <>
@@ -56,9 +56,9 @@ export function ProjectGallery({ images, alt, emoji, className = '' }: Props) {
           </button>
 
           <div className="project-gallery__dots">
-            {images.map((src, i) => (
+            {images.map((photo, i) => (
               <button
-                key={src}
+                key={photo.src}
                 className={`project-gallery__dot ${i === index ? 'is-active' : ''}`}
                 aria-label={`Show photo ${i + 1}`}
                 onClick={(e) => {

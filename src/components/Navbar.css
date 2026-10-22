@@ -20,15 +20,24 @@
   justify-content: center;
 }
 
+/* Below 720px the six links do not fit, so the pill becomes a sideways-scrolling row. */
 .navbar__links {
   display: flex;
   padding: 5px;
   gap: 2px;
   align-items: center;
   max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.navbar__links::-webkit-scrollbar {
+  display: none;
 }
 
 .navbar__link {
+  flex-shrink: 0;
   padding: 9px 14px;
   border-radius: var(--radius-pill);
   font-weight: 600;
@@ -44,13 +53,17 @@
   transform: translateY(-1px);
 }
 
+.navbar__link:focus-visible {
+  outline-offset: -2px;
+}
+
 .navbar__link.is-active {
   color: var(--accent);
   box-shadow: inset 3px 3px 6px var(--shadow-dark), inset -3px -3px 6px var(--shadow-light);
   transform: none;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 720px) {
   .navbar__links {
     padding: 6px;
     gap: 4px;

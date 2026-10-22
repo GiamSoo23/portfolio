@@ -1,22 +1,19 @@
-import type { Project } from '../data/projects'
+import type { Photo } from '../data/types'
 
 interface Props {
-  project: Project
+  cover?: Photo
+  emoji: string
   className?: string
-  /** Overrides the image source shown (e.g. the currently selected subsection's cover). */
-  overrideSrc?: string
 }
 
-export function ProjectThumb({ project, className = '', overrideSrc }: Props) {
-  const cover = overrideSrc ?? project.images?.[0] ?? project.subsections?.[0]?.images?.[0]
-
+export function ProjectThumb({ cover, emoji, className = '' }: Props) {
   return (
     <div className={`project-thumb ${className}`}>
       {cover ? (
-        <img src={cover} alt={project.title} />
+        <img src={cover.src} alt={cover.alt} loading="lazy" />
       ) : (
         <span className="project-thumb__emoji" aria-hidden="true">
-          {project.emoji}
+          {emoji}
         </span>
       )}
     </div>

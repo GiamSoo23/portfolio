@@ -1,20 +1,24 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { accentStyle } from '../data/accentColors'
-import type { Project } from '../data/projects'
+import { entryView, joinNames, type Entry } from '../data/types'
 import { CloseIcon } from './icons'
 import { ProjectGallery } from './ProjectGallery'
 
 interface Props {
-  project: Project
+  entry: Entry
   initialSubIndex?: number
   onClose: () => void
 }
 
-export function ProjectModal({ project, initialSubIndex = 0, onClose }: Props) {
+export function ProjectModal({ entry, initialSubIndex = 0, onClose }: Props) {
   const [subIndex, setSubIndex] = useState(initialSubIndex)
-  const sub = project.subsections?.[subIndex]
+  const closeRef = useRef<HTMLButtonElement>(null)
+  const view = entryView(entry, subIndex)
 
   useEffect(() => {
+    const previouslyFocused = document.activeElement as HTMLElement | null
+    closeRef.current?.focus()
+
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose()
     }
@@ -23,13 +27,11 @@ export function ProjectModal({ project, initialSubIndex = 0, onClose }: Props) {
     return () => {
       document.removeEventListener('keydown', onKey)
       document.body.style.overflow = ''
+      previouslyFocused?.focus()
     }
   }, [onClose])
 
-  const images = sub ? sub.images : project.images ?? []
-  const highlights = sub ? sub.highlights : project.highlights ?? []
-  const period = sub?.period ?? project.period
-  const location = sub?.location ?? project.location
+  const meta = [entry.event, view.period, view.location].filter(Boolean).join(' · ')
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -38,36 +40,29 @@ export function ProjectModal({ project, initialSubIndex = 0, onClose }: Props) {
         role="dialog"
         aria-modal="true"
         aria-labelledby="modal-title"
-        style={accentStyle(project.accent)}
+        style={accentStyle(entry.accent)}
         onClick={(e) => e.stopPropagation()}
       >
-        <button className="modal__close neu-icon-btn" onClick={onClose} aria-label="Close">
+        <button ref={closeRef} className="modal__close neu-icon-btn" onClick={onClose} aria-label="Close">
           <CloseIcon />
         </button>
 
-        <ProjectGallery
-          images={images}
-          alt={sub ? `${project.title} — ${sub.label}` : project.title}
-          emoji={project.emoji}
-          className="project-thumb--modal"
-        />
+        <ProjectGallery images={view.images} emoji={entry.emoji} className="project-thumb--modal" />
 
         <div className="modal__content">
-          <p className="project-card__role">{project.role}</p>
-          <h3 id="modal-title" className="modal__title">
-            {project.title}
-          </h3>
-          <p className="modal__meta">
-            {period}
-            {location ? ` · ${location}` : ''}
-          </p>
+          <p className="project-card__role">{view.role}</p>
+          <h2 id="modal-title" className="modal__title">
+            {entry.title}
+          </h2>
+          {meta && <p className="modal__meta">{meta}</p>}
 
-          {project.subsections && (
+          {entry.subsections && (
             <div className="modal__subtoggle neu-pressed">
-              {project.subsections.map((s, i) => (
+              {entry.subsections.map((s, i) => (
                 <button
                   key={s.id}
                   className={`modal__subtoggle-btn ${i === subIndex ? 'is-active' : ''}`}
+                  aria-pressed={i === subIndex}
                   onClick={() => setSubIndex(i)}
                 >
                   {s.label}
@@ -76,24 +71,34 @@ export function ProjectModal({ project, initialSubIndex = 0, onClose }: Props) {
             </div>
           )}
 
+          <p className="modal__summary">{view.summary}</p>
+
           <ul className="modal__highlights">
-            {highlights.map((h) => (
+            {view.highlights.map((h) => (
               <li key={h}>{h}</li>
             ))}
           </ul>
 
+          {entry.team && entry.team.length > 0 && (
+            <p className="modal__team">Built with {joinNames(entry.team)}.</p>
+          )}
+
           <div className="project-card__tags modal__tags">
-            {project.tech.map((tech) => (
+            {entry.tech.map((tech) => (
               <span key={tech} className="tag neu-pressed">
                 {tech}
               </span>
             ))}
           </div>
 
-          {project.link && (
-            <a className="neu-btn modal__link" href={project.link} target="_blank" rel="noreferrer">
-              Visit Project
-            </a>
+          {entry.links && entry.links.length > 0 && (
+            <div className="modal__links">
+              {entry.links.map((link) => (
+                <a key={link.href} className="neu-btn modal__link" href={link.href} target="_blank" rel="noreferrer">
+                  {link.label}
+                </a>
+              ))}
+            </div>
           )}
         </div>
       </div>

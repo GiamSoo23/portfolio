@@ -1,69 +1,75 @@
+import { contactLinks, currently, hero, RESUME_URL, SITE_NAME } from '../data/site'
+import { routeHref } from '../hooks/useHashRoute'
 import { Greeting } from './Greeting'
 import { ArrowRightIcon, GitHubIcon, LinkedInIcon, MailIcon } from './icons'
 import './Hero.css'
 
-export function Hero() {
-  const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+const SOCIAL_ICONS = { email: MailIcon, linkedin: LinkedInIcon, github: GitHubIcon }
 
+export function Hero() {
   return (
     <section id="home" className="hero">
       <div className="container hero__inner">
         <div className="hero__text">
           <p className="section-label">Computer Science @ USF</p>
           <Greeting />
-          <h1 className="hero__title">
+          <h1 className="hero__title page-title" tabIndex={-1}>
             I'm <span className="hero__accent">Gregory</span>.<br />
             I build interactive systems.
           </h1>
-          <p className="hero__subtitle">
-            From mixed-reality research on Magic Leap 2 to full-stack platforms coordinating
-            hundreds of people — I like turning messy, real-world coordination problems into
-            software that just works.
-          </p>
+          <p className="hero__subtitle">{hero.subtitle}</p>
 
           <div className="hero__actions">
-            <button className="neu-btn hero__cta" onClick={() => scrollTo('projects')}>
-              View Projects <ArrowRightIcon size={16} />
-            </button>
-            <button className="neu-btn hero__cta hero__cta--ghost" onClick={() => scrollTo('contact')}>
-              Contact Me
-            </button>
+            <a className="neu-btn hero__cta" href={routeHref('experience')}>
+              View Experience <ArrowRightIcon size={16} />
+            </a>
+            {RESUME_URL ? (
+              <a className="neu-btn hero__cta hero__cta--ghost" href={RESUME_URL} target="_blank" rel="noreferrer">
+                Download Resume
+              </a>
+            ) : (
+              <button
+                className="neu-btn hero__cta hero__cta--ghost"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Contact Me
+              </button>
+            )}
           </div>
 
           <div className="hero__socials">
-            <a
-              className="neu-icon-btn hero__social"
-              href="https://github.com/giamsoo23"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="GitHub"
-            >
-              <GitHubIcon />
-            </a>
-            <a
-              className="neu-icon-btn hero__social"
-              href="https://www.linkedin.com/in/gregoryramirezf/"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="LinkedIn"
-            >
-              <LinkedInIcon />
-            </a>
-            <a
-              className="neu-icon-btn hero__social"
-              href="mailto:ramiro2112gr@gmail.com"
-              aria-label="Email"
-            >
-              <MailIcon />
-            </a>
+            {contactLinks.map(({ kind, label, href }) => {
+              const Icon = SOCIAL_ICONS[kind]
+              return (
+                <a
+                  key={kind}
+                  className="neu-icon-btn hero__social"
+                  href={href}
+                  {...(kind === 'email' ? {} : { target: '_blank', rel: 'noreferrer' })}
+                  aria-label={label}
+                >
+                  <Icon />
+                </a>
+              )
+            })}
           </div>
         </div>
 
         <div className="hero__photo-wrap">
           <div className="hero__photo neu-raised">
-            <img src={`${import.meta.env.BASE_URL}avatar.jpeg`} alt="Gregory Ramírez Fuentes" />
+            <img src={hero.avatar} alt={SITE_NAME} />
           </div>
         </div>
+      </div>
+
+      <div className="container">
+        <ul className="currently" aria-label="Currently">
+          {currently.map((item) => (
+            <li key={item} className="currently__pill neu-pressed">
+              {item}
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   )

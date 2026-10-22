@@ -1,35 +1,39 @@
 import { useState } from 'react'
 import { accentStyle } from '../data/accentColors'
-import type { Project } from '../data/projects'
+import { entryView, type Entry } from '../data/types'
 import { ArrowRightIcon } from './icons'
 import { ProjectThumb } from './ProjectThumb'
 
 interface Props {
-  project: Project
-  onExpand: (project: Project, subIndex: number) => void
+  entry: Entry
+  onExpand: (entry: Entry, subIndex: number) => void
 }
 
-export function ProjectCard({ project, onExpand }: Props) {
+export function ProjectCard({ entry, onExpand }: Props) {
   const [subIndex, setSubIndex] = useState(0)
-  const sub = project.subsections?.[subIndex]
+  const view = entryView(entry, subIndex)
+  const meta = entry.event ? [entry.event, entry.period].filter(Boolean).join(' · ') : null
 
   return (
     <article
       className="project-card neu-raised"
-      style={accentStyle(project.accent)}
-      onClick={() => onExpand(project, subIndex)}
+      style={accentStyle(entry.accent)}
+      data-entry-id={entry.id}
+      onClick={() => onExpand(entry, subIndex)}
       role="button"
       tabIndex={0}
+      aria-label={`${entry.title}, view details`}
       onKeyDown={(e) => {
+        if (e.target !== e.currentTarget) return
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault()
-          onExpand(project, subIndex)
+          onExpand(entry, subIndex)
         }
       }}
     >
       <div className="project-thumb-wrap">
-        <ProjectThumb project={project} overrideSrc={sub?.images[0]} />
-        {project.currentlyWorking && (
+        <ProjectThumb cover={view.images[0]} emoji={entry.emoji} />
+        {entry.currentlyWorking && (
           <span className="project-card__badge">
             <span className="project-card__badge-dot" />
             Currently Working
@@ -38,16 +42,18 @@ export function ProjectCard({ project, onExpand }: Props) {
       </div>
 
       <div className="project-card__body">
-        <p className="project-card__role">{project.role}</p>
-        <h3 className="project-card__title">{project.title}</h3>
-        <p className="project-card__summary">{project.summary}</p>
+        <p className="project-card__role">{view.role}</p>
+        <h3 className="project-card__title">{entry.title}</h3>
+        {meta && <p className="project-card__meta">{meta}</p>}
+        <p className="project-card__summary">{view.summary}</p>
 
-        {project.subsections && (
+        {entry.subsections && (
           <div className="project-card__subtoggle neu-pressed">
-            {project.subsections.map((s, i) => (
+            {entry.subsections.map((s, i) => (
               <button
                 key={s.id}
                 className={`project-card__subtoggle-btn ${i === subIndex ? 'is-active' : ''}`}
+                aria-pressed={i === subIndex}
                 onClick={(e) => {
                   e.stopPropagation()
                   setSubIndex(i)
@@ -60,22 +66,22 @@ export function ProjectCard({ project, onExpand }: Props) {
         )}
 
         <div className="project-card__tags">
-          {project.tech.slice(0, 3).map((tech) => (
+          {entry.tech.slice(0, 3).map((tech) => (
             <span key={tech} className="tag neu-pressed">
               {tech}
             </span>
           ))}
-          {project.tech.length > 3 && (
-            <span className="tag neu-pressed">+{project.tech.length - 3}</span>
-          )}
+          {entry.tech.length > 3 && <span className="tag neu-pressed">+{entry.tech.length - 3}</span>}
         </div>
       </div>
 
       <button
         className="project-card__expand neu-btn"
+        tabIndex={-1}
+        aria-hidden="true"
         onClick={(e) => {
           e.stopPropagation()
-          onExpand(project, subIndex)
+          onExpand(entry, subIndex)
         }}
       >
         View Details <ArrowRightIcon size={16} />

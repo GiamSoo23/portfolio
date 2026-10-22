@@ -1,0 +1,122 @@
+import { asset, type Entry } from './types'
+
+export const leadership: Entry[] = [
+  {
+    id: 'shpe',
+    title: 'SHPE at USF',
+    role: 'VP of Technology',
+    period: 'April 2025 - April 2026',
+    location: 'Tampa, FL',
+    summary:
+      "As VP of Technology for the Society of Hispanic Professional Engineers (SHPE) at USF, directed the strategy for the chapter's two annual hackathons, Hackabull and HackJam, from sponsorships to the tech behind the attendee experience.",
+    tech: ['Event Strategy', 'Sponsorship', 'Team Leadership'],
+    accent: 'pink',
+    emoji: '🚀',
+    images: [
+      { src: asset('shpe-1.jpeg'), alt: 'Hackabull organizers and participants in front of the event screen listing partners and sponsors' },
+      { src: asset('shpe-2.jpeg'), alt: 'Students in a lecture hall during a Hackabull session' },
+      { src: asset('shpe-3.jpeg'), alt: 'Presenting at the front of a lecture hall with "About Hackabull" on the screens' },
+      { src: asset('shpe-4.jpeg'), alt: 'Students gathered around a small robot car during a hackathon workshop' },
+    ],
+    highlights: [
+      'Directed two annual hackathons, HackJam and Hackabull, raising $20,000 through partnerships with SHPE, MLH (Major League Hacking), and SASE (Society of Asian Scientists and Engineers), and companies like Microsoft, Velera, and Amgen, reaching 515 students.',
+      'Led the Hackabull organizing team of 25 students.',
+      'Now part of the SHPE USF Tech Team organizing HackJam 26 (November 21, 2026).',
+    ],
+  },
+  {
+    id: 'first-global',
+    title: 'FIRST Global',
+    role: 'Mentor and Production Volunteer',
+    summary:
+      'Seven years in the FIRST Global community, first as a competitor and now as a mentor, developer, and production volunteer.',
+    tech: ['Mentorship', 'Public Speaking', 'Fundraising', 'Video Production'],
+    accent: 'red',
+    emoji: '🤖',
+    currentlyWorking: true,
+    subsections: [
+      {
+        id: 'team-chile',
+        label: 'Team Chile',
+        role: 'Mentor', // TODO(Gregory): "Mentor" or "Coordinator"? The site says Mentor, other materials say Coordinator.
+        summary: 'Long-term mentorship of the Chilean national robotics team, on both soft skills and fundraising.',
+        period: 'March 2025 - Present',
+        location: 'Chile',
+        images: [{ src: asset('teamchile-1.jpg'), alt: 'Team Chile on stage in front of the FIRST Global Challenge backdrop' }],
+        highlights: [
+          'Mentored FIRST Global Team Chile, helping the team develop soft skills in communication and teamwork.',
+          'Through the team’s TV, government, and radio appearances, helped raise about $25,000 over the last two years to cover the team’s costs to compete.',
+          'Ran English preparation classes so students could handle judge Q&A.',
+        ],
+      },
+      {
+        id: 'production-2026',
+        label: 'FGC 2026',
+        role: 'Production Volunteer',
+        summary: 'Behind the camera with the Production team at the FIRST Global Challenge in Incheon.',
+        period: 'October 2026',
+        location: 'Incheon, South Korea',
+        // TODO(Gregory): add public/projects/productionfgc2026-1..3
+        images: [],
+        highlights: [
+          'Volunteered with the Production team, working behind the camera for the first time: running student interviews, tracking down teams across the venue, setting up cameras, and moving gear across the arena.',
+          'Wrote the daily messages telling mentors of recorded teams where to be.',
+        ],
+      },
+      {
+        id: 'production-earlier',
+        // TODO(Gregory): which year was this? (The photos suggest FGC 2025 in Panama.) Then rename the label to e.g. "FGC 2025" and add a period.
+        label: 'Earlier FGC',
+        role: 'Production Volunteer',
+        summary: 'Photography and video for teams and key moments at the FIRST Global Challenge.',
+        images: [
+          { src: asset('productionfgc-1.jpeg'), alt: 'A competition robot from team 21565 on the field' },
+          { src: asset('productionfgc-2.jpeg'), alt: 'Opening of the FIRST Global Challenge arena, with the flag of Panama on the center screen' },
+          { src: asset('productionfgc-4.jpg'), alt: 'Filming a team interview on the competition floor' },
+        ],
+        highlights: [
+          'Took photography and video for the event, capturing teams and key moments across the competition.',
+          'Helped organize the Step & Repeat for teams’ videos over the 3-day event.',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'copa-kai',
+    title: 'Copa Ka’i',
+    role: 'Co-founder and Production Director',
+    period: 'Jan 2024 - Jun 2024',
+    location: 'Maracaibo, Venezuela',
+    summary: "Co-founded Venezuela's largest robotics competition and led its production.",
+    tech: ['Event Production', 'AV Design', 'Logistics', 'Team Training'],
+    accent: 'orange',
+    emoji: '🎬',
+    images: [
+      { src: asset('productioncopa-1.jpeg'), alt: 'Copa Ka’i arena lit up during the opening ceremony' },
+      { src: asset('productioncopa-2.jpg'), alt: 'Students celebrating on the arena floor at Copa Ka’i' },
+      { src: asset('productioncopa-3.jpeg'), alt: 'Copa Ka’i arena from above, with the stage and large screens' },
+      { src: asset('productioncopa-4.jpeg'), alt: 'Production control room with rows of monitors during Copa Ka’i' },
+    ],
+    highlights: [
+      'Designed the audio-visual (AV) plan for a 45-minute opening ceremony inspired by Super Bowl Halftime Show #50, producing 20 animations viewed by 3,000+ people.',
+      'Drafted 12 role descriptions and trained 60 volunteers, empowering leaders to manage logistics for the 3-day Copa Ka’i competition.',
+    ],
+  },
+  {
+    id: 'ibm-z',
+    title: 'IBM Z Student Ambassador',
+    role: 'Student Ambassador, USF',
+    period: 'October 2026 - Present',
+    location: 'USF, Tampa, FL',
+    summary:
+      'Selected by IBM to bring mainframe skills to students on campus. Learning how the systems behind banks and airlines work, and sharing that with other students.',
+    tech: ['IBM Z', 'Mainframe', 'Workshops'],
+    accent: 'blue',
+    emoji: '🖥️',
+    currentlyWorking: true,
+    images: [],
+    // TODO(Gregory): first events or workshops once you start. Remove `draft` once there is at least one highlight.
+    highlights: [],
+    draft: true,
+  },
+]
