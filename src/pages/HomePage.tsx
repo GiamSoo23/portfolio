@@ -1,4 +1,3 @@
-import { Contact } from '../components/Contact'
 import { Hero } from '../components/Hero'
 import { ArrowRightIcon } from '../components/icons'
 import { ProjectThumb } from '../components/ProjectThumb'
@@ -62,8 +61,6 @@ export function HomePage() {
           </div>
         </div>
       </section>
-
-      <Contact />
     </>
   )
 }

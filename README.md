@@ -6,7 +6,7 @@ Personal portfolio built with React + TypeScript + Vite, styled with a neumorphi
 
 Hash-routed (`#/experience`), so deep links survive a refresh on GitHub Pages.
 
-- **Home** (`#/`): intro, "Currently" strip, about, education, a card for each page, and contact.
+- **Home** (`#/`): intro, "Currently" strip, about, education, and a card for each page. Contact links live in the footer on every page.
 - **Experience** (`#/experience`): research and engineering roles.
 - **Projects** (`#/projects`): hackathon builds and side projects.
 - **Leadership** (`#/leadership`): SHPE at USF, FIRST Global, Copa Ka'i, IBM Z.

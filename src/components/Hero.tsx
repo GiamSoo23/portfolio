@@ -21,19 +21,12 @@ export function Hero() {
 
           <div className="hero__actions">
             <a className="neu-btn hero__cta" href={routeHref('experience')}>
-              View Experience <ArrowRightIcon size={16} />
+              Check My Work <ArrowRightIcon size={16} />
             </a>
-            {RESUME_URL ? (
+            {RESUME_URL && (
               <a className="neu-btn hero__cta hero__cta--ghost" href={RESUME_URL} target="_blank" rel="noreferrer">
                 Download Resume
               </a>
-            ) : (
-              <button
-                className="neu-btn hero__cta hero__cta--ghost"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Contact Me
-              </button>
             )}
           </div>
 
