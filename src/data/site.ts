@@ -86,8 +86,7 @@ export const pages: PageInfo[] = [
 ]
 
 export const hero = {
-  subtitle:
-    'From mixed-reality research on Magic Leap 2 to a platform that coordinates hundreds of event staff, I like turning messy, real-world coordination problems into software that just works.',
+  subtitle: 'Building for the human side of technology.',
   avatar: `${import.meta.env.BASE_URL}avatar.jpeg`,
 }
 
