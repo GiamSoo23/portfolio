@@ -17,6 +17,8 @@ export interface EntrySubsection {
   role?: string
   /** Overrides the parent entry's summary while this subsection is selected. */
   summary?: string
+  /** Overrides the parent entry's tagline while this subsection is selected. */
+  tagline?: string
   period?: string
   location?: string
   images: Photo[]
@@ -32,6 +34,8 @@ export interface Entry {
   /** Hackathon or event name, e.g. "ShellHacks 2026". */
   event?: string
   summary: string
+  /** One line for the card. The full `summary` stays in the modal. */
+  tagline?: string
   tech: string[]
   /** Used when the entry has a single flat gallery (no subsections). */
   highlights?: string[]
@@ -64,6 +68,7 @@ export function entryView(entry: Entry, subIndex = 0) {
     sub,
     role: sub?.role ?? entry.role,
     summary: sub?.summary ?? entry.summary,
+    tagline: sub?.tagline ?? entry.tagline ?? sub?.summary ?? entry.summary,
     period: sub?.period ?? entry.period,
     location: sub?.location ?? entry.location,
     images: sub ? sub.images : (entry.images ?? []),

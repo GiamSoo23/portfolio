@@ -7,6 +7,7 @@ export const experience: Entry[] = [
     role: 'Research Assistant',
     period: 'May 2026 - Present',
     location: 'USF, Tampa, FL',
+    tagline: 'Building mixed-reality studies on Magic Leap 2.',
     summary:
       'Human-computer interaction research building mixed-reality study experiences on Magic Leap 2, as part of a 6-person team directed by Julia Woodward.',
     tech: ['C#', 'Unity', 'Magic Leap 2', 'Ultraleap'],
@@ -28,6 +29,7 @@ export const experience: Entry[] = [
     role: 'Lead Developer',
     period: 'April 2026 - Present',
     location: 'Remote',
+    tagline: 'A web app built to coordinate about 300 event staff and volunteers.',
     summary:
       'A web app that replaced paper sheets and word-of-mouth coordination for about 300 staff and volunteers across 10 roles at the FIRST Global Challenge, a robotics competition with 191 national teams.',
     tech: ['Next.js 16', 'TypeScript', 'Prisma', 'Supabase', 'PostgreSQL', 'Vercel'],

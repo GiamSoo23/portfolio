@@ -8,6 +8,7 @@ export const projects: Entry[] = [
     event: 'ShellHacks 2026',
     period: 'September 2026',
     location: 'Florida International University, Miami, FL',
+    tagline: 'Wireless sensors that detect breathing under rubble.',
     summary:
       'A set of small wireless sensors you place around a pile of rubble to detect the tiny movements of someone breathing underneath, inspired by the 2026 earthquakes in Venezuela.',
     tech: ['ESP32', 'UWB', 'C++', 'Python', 'Signal Processing', '3D Printing'],
@@ -37,6 +38,7 @@ export const projects: Entry[] = [
     role: 'Backend Lead',
     event: 'BloomKnights',
     period: 'July 2026',
+    tagline: 'Realistic solar savings estimates for homeowners.',
     summary:
       'A solar-savings estimation pipeline combining the Google Solar API, EIA API, and Google Places to give homeowners a realistic savings estimate.',
     tech: ['Next.js', 'Google Solar API', 'EIA API', 'Zod'],
@@ -64,6 +66,7 @@ export const projects: Entry[] = [
     title: 'Mox, Cross-Platform File Relay',
     role: 'Creator and Developer',
     period: 'May 2026',
+    tagline: 'Move files between Mac and Android with one hotkey.',
     summary:
       'A cross-platform file-relay app moving files up to 500MB between Mac and Android through a private Supabase bucket.',
     tech: ['Swift', 'Kotlin', 'Supabase'],

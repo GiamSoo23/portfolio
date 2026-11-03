@@ -47,7 +47,7 @@ export function ProjectCard({ entry, onExpand }: Props) {
         <p className="project-card__role">{view.role}</p>
         <h3 className="project-card__title">{entry.title}</h3>
         {meta && <p className="project-card__meta">{meta}</p>}
-        <p className="project-card__summary">{view.summary}</p>
+        <p className="project-card__summary">{view.tagline}</p>
 
         {entry.subsections && (
           <div className="project-card__subtoggle neu-pressed">
@@ -67,14 +67,7 @@ export function ProjectCard({ entry, onExpand }: Props) {
           </div>
         )}
 
-        <div className="project-card__tags">
-          {entry.tech.slice(0, 3).map((tech) => (
-            <span key={tech} className="tag neu-pressed">
-              {tech}
-            </span>
-          ))}
-          {entry.tech.length > 3 && <span className="tag neu-pressed">+{entry.tech.length - 3}</span>}
-        </div>
+        <p className="project-card__tech">{entry.tech.slice(0, 3).join(' · ')}</p>
       </div>
 
       <div className="project-card__actions">

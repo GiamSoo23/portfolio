@@ -7,6 +7,7 @@ export const leadership: Entry[] = [
     role: 'VP of Technology',
     period: 'April 2025 - April 2026',
     location: 'Tampa, FL',
+    tagline: 'Directed two hackathons, raising $20,000 and reaching 515 students.',
     summary:
       "As VP of Technology for the Society of Hispanic Professional Engineers (SHPE) at USF, directed the strategy for the chapter's two annual hackathons, Hackabull and HackJam, from sponsorships to the tech behind the attendee experience.",
     tech: ['Event Strategy', 'Sponsorship', 'Team Leadership'],
@@ -38,6 +39,7 @@ export const leadership: Entry[] = [
         id: 'team-chile',
         label: 'Team Chile',
         role: 'Mentor',
+        tagline: 'Mentored Chile’s national robotics team.',
         summary: 'Long-term mentorship of the Chilean national robotics team, on both soft skills and fundraising.',
         period: 'March 2025 - October 2026',
         location: 'Chile',
@@ -52,6 +54,7 @@ export const leadership: Entry[] = [
         id: 'production-2026',
         label: 'FGC 2026',
         role: 'Production Volunteer',
+        tagline: 'Behind the camera with the Production team in Incheon.',
         summary: 'Behind the camera with the Production team at the FIRST Global Challenge in Incheon.',
         period: 'October 2026',
         location: 'Incheon, South Korea',
@@ -66,6 +69,7 @@ export const leadership: Entry[] = [
         id: 'production-2024',
         label: 'FGC 2024',
         role: 'Production Volunteer',
+        tagline: 'Made videos for the FIRST Global Challenge.',
         summary: 'Made videos for the FIRST Global Challenge, capturing teams and key moments of the competition.',
         period: '2024',
         images: [
@@ -86,6 +90,7 @@ export const leadership: Entry[] = [
     role: 'Executive Staff and Production Director',
     period: 'Jan 2024 - Jun 2024',
     location: 'Maracaibo, Venezuela',
+    tagline: 'Executive staff and production lead for Venezuela’s largest robotics competition.',
     summary: "Served on the executive organizing staff of Venezuela's largest robotics competition and led its production.",
     tech: ['Event Production', 'AV Design', 'Logistics', 'Team Training'],
     accent: 'orange',
@@ -107,6 +112,7 @@ export const leadership: Entry[] = [
     role: 'Student Ambassador, USF',
     period: 'October 2026 - Present',
     location: 'USF, Tampa, FL',
+    tagline: 'Bringing mainframe skills to students on campus.',
     summary:
       'Selected by IBM to bring mainframe skills to students on campus. Learning how the systems behind banks and airlines work, and sharing that with other students.',
     tech: ['IBM Z', 'Mainframe', 'Workshops'],
