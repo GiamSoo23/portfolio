@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { accentStyle } from '../data/accentColors'
 import { entryView, joinNames, type Entry } from '../data/types'
 import { CloseIcon } from './icons'
@@ -33,7 +34,8 @@ export function ProjectModal({ entry, initialSubIndex = 0, onClose }: Props) {
 
   const meta = [entry.event, view.period, view.location].filter(Boolean).join(' · ')
 
-  return (
+  // Portaled to <body> so the sticky navbar cannot stack above the overlay.
+  return createPortal(
     <div className="modal-overlay" onClick={onClose}>
       <div
         className="modal neu-flat"
@@ -102,6 +104,7 @@ export function ProjectModal({ entry, initialSubIndex = 0, onClose }: Props) {
           )}
         </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   )
 }
