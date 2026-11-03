@@ -1,10 +1,10 @@
 import { contactLinks, currently, hero, SITE_NAME } from '../data/site'
 import { routeHref } from '../hooks/useHashRoute'
 import { Greeting } from './Greeting'
-import { ArrowRightIcon, GitHubIcon, LinkedInIcon, MailIcon } from './icons'
+import { ArrowRightIcon, GitHubIcon, LinkedInIcon } from './icons'
 import './Hero.css'
 
-const SOCIAL_ICONS = { email: MailIcon, linkedin: LinkedInIcon, github: GitHubIcon }
+const SOCIAL_ICONS = { linkedin: LinkedInIcon, github: GitHubIcon }
 
 export function Hero() {
   return (
@@ -33,7 +33,8 @@ export function Hero() {
                   key={kind}
                   className="neu-icon-btn hero__social"
                   href={href}
-                  {...(kind === 'email' ? {} : { target: '_blank', rel: 'noreferrer' })}
+                  target="_blank"
+                  rel="noreferrer"
                   aria-label={label}
                 >
                   <Icon />

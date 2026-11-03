@@ -6,7 +6,7 @@ export function Footer() {
       <div className="container">
         <nav className="footer__links" aria-label="Contact">
           {contactLinks.map(({ kind, label, href }) => (
-            <a key={kind} href={href} {...(kind === 'email' ? {} : { target: '_blank', rel: 'noreferrer' })}>
+            <a key={kind} href={href} target="_blank" rel="noreferrer">
               {label}
             </a>
           ))}

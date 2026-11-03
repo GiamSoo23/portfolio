@@ -104,10 +104,9 @@ export const education = {
   languages: 'Bilingual: English and Spanish',
 }
 
-export type ContactKind = 'email' | 'linkedin' | 'github'
+export type ContactKind = 'linkedin' | 'github'
 
 export const contactLinks: { kind: ContactKind; label: string; value: string; href: string }[] = [
-  { kind: 'email', label: 'Email', value: 'ramiro2112gr@gmail.com', href: 'mailto:ramiro2112gr@gmail.com' },
   {
     kind: 'linkedin',
     label: 'LinkedIn',
