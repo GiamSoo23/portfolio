@@ -11,7 +11,6 @@ export function Hero() {
     <section id="home" className="hero">
       <div className="container hero__inner">
         <div className="hero__text">
-          <p className="section-label">Computer Science @ USF</p>
           <Greeting />
           <h1 className="hero__title page-title" tabIndex={-1}>
             I'm <span className="hero__accent">Gregory</span>.<br />
