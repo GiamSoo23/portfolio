@@ -82,8 +82,8 @@ export const currently: string[] = [
 ]
 
 export const about: string[] = [
-  "I'm a Computer Science student at the University of South Florida who likes building technology that brings people together and makes their lives easier. I grew up between Venezuela and Chile, and robotics competitions are what first pulled me into engineering. Today I work across the full stack, with a soft spot for systems and software that talks to hardware.",
-  'Outside of code, I care about opening doors for other students. I helped set the foundations for Copa Ka’i, Venezuela’s largest robotics competition, served as VP of Technology for SHPE USF, led Hackabull, and joined IBM’s Z Student Ambassador program in October 2026. I’m currently looking for Summer 2027 software engineering internships, especially on teams that move fast and give engineers real ownership.',
+  "I'm a CS student who likes building technology that brings people together and makes their lives easier. I grew up between Venezuela and Chile, and robotics competitions are what first pulled me into engineering. Today I work across the full stack, with a soft spot for systems and software that talks to hardware.",
+  'Outside of code, I care about opening doors for other students. I helped set the foundations for Copa Ka’i, Venezuela’s largest robotics competition, served as VP of Technology for SHPE USF, led Hackabull, and joined IBM’s Z Student Ambassador program in October 2026. I’m currently looking for Summer 2027 software engineering internships, especially on teams working on DevOps or app development.',
 ]
 
 export const education = {
