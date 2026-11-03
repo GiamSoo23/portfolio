@@ -61,11 +61,11 @@ export function ProjectModal({ entry, initialSubIndex = 0, onClose }: Props) {
           {meta && <p className="modal__meta">{meta}</p>}
 
           {entry.subsections && (
-            <div className="modal__subtoggle neu-pressed">
+            <div className="entry-tabs">
               {entry.subsections.map((s, i) => (
                 <button
                   key={s.id}
-                  className={`modal__subtoggle-btn ${i === subIndex ? 'is-active' : ''}`}
+                  className={`entry-tabs__btn ${i === subIndex ? 'is-active' : ''}`}
                   aria-pressed={i === subIndex}
                   onClick={() => setSubIndex(i)}
                 >

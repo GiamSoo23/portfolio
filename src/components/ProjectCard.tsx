@@ -50,11 +50,11 @@ export function ProjectCard({ entry, onExpand }: Props) {
         <p className="project-card__summary">{view.tagline}</p>
 
         {entry.subsections && (
-          <div className="project-card__subtoggle neu-pressed">
+          <div className="entry-tabs">
             {entry.subsections.map((s, i) => (
               <button
                 key={s.id}
-                className={`project-card__subtoggle-btn ${i === subIndex ? 'is-active' : ''}`}
+                className={`entry-tabs__btn ${i === subIndex ? 'is-active' : ''}`}
                 aria-pressed={i === subIndex}
                 onClick={(e) => {
                   e.stopPropagation()
@@ -67,7 +67,13 @@ export function ProjectCard({ entry, onExpand }: Props) {
           </div>
         )}
 
-        <p className="project-card__tech">{view.tech.slice(0, 3).join(' · ')}</p>
+        <div className="project-card__tech">
+          <ul>
+            {view.tech.slice(0, 3).map((tech) => (
+              <li key={tech}>{tech}</li>
+            ))}
+          </ul>
+        </div>
       </div>
 
       <div className="project-card__actions">
