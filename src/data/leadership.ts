@@ -40,6 +40,7 @@ export const leadership: Entry[] = [
         label: 'FGC 2026',
         role: 'Production Volunteer',
         tagline: 'Behind the camera with the Production team in Incheon.',
+        tech: ['Video Production', 'Interviews', 'Logistics'],
         summary: 'Behind the camera with the Production team at the FIRST Global Challenge in Incheon.',
         period: 'October 2026',
         location: 'Incheon, South Korea',
@@ -56,6 +57,7 @@ export const leadership: Entry[] = [
         label: 'Team Chile',
         role: 'Mentor',
         tagline: 'Mentored Chile’s national robotics team.',
+        tech: ['Mentorship', 'Public Speaking', 'Fundraising'],
         summary: 'Long-term mentorship of the Chilean national robotics team, on both soft skills and fundraising.',
         period: 'March 2025 - October 2026',
         location: 'Chile',
@@ -71,6 +73,7 @@ export const leadership: Entry[] = [
         label: 'FGC 2024',
         role: 'Production Volunteer',
         tagline: 'Made videos for the FIRST Global Challenge.',
+        tech: ['Video Production', 'Photography'],
         summary: 'Made videos for the FIRST Global Challenge, capturing teams and key moments of the competition.',
         period: '2024',
         images: [

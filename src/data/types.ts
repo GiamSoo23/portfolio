@@ -19,6 +19,8 @@ export interface EntrySubsection {
   summary?: string
   /** Overrides the parent entry's tagline while this subsection is selected. */
   tagline?: string
+  /** Overrides the parent entry's tech while this subsection is selected. */
+  tech?: string[]
   period?: string
   location?: string
   images: Photo[]
@@ -69,6 +71,7 @@ export function entryView(entry: Entry, subIndex = 0) {
     role: sub?.role ?? entry.role,
     summary: sub?.summary ?? entry.summary,
     tagline: sub?.tagline ?? entry.tagline ?? sub?.summary ?? entry.summary,
+    tech: sub?.tech ?? entry.tech,
     period: sub?.period ?? entry.period,
     location: sub?.location ?? entry.location,
     images: sub ? sub.images : (entry.images ?? []),

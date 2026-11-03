@@ -67,7 +67,7 @@ export function ProjectCard({ entry, onExpand }: Props) {
           </div>
         )}
 
-        <p className="project-card__tech">{entry.tech.slice(0, 3).join(' · ')}</p>
+        <p className="project-card__tech">{view.tech.slice(0, 3).join(' · ')}</p>
       </div>
 
       <div className="project-card__actions">

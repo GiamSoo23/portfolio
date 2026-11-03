@@ -88,7 +88,7 @@ export function ProjectModal({ entry, initialSubIndex = 0, onClose }: Props) {
           )}
 
           <div className="project-card__tags modal__tags">
-            {entry.tech.map((tech) => (
+            {view.tech.map((tech) => (
               <span key={tech} className="tag neu-pressed">
                 {tech}
               </span>
