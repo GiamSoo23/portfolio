@@ -1,7 +1,7 @@
 import { experience } from './experience'
 import { leadership } from './leadership'
 import { projects } from './projects'
-import { published, type AccentColor, type Photo } from './types'
+import { asset, published, type AccentColor, type Photo } from './types'
 
 export const SITE_NAME = 'Gregory Ramírez Fuentes'
 
@@ -66,6 +66,7 @@ export const pages: PageInfo[] = [
     title: 'Skills',
     description: 'What I work with, where I used it, plus certifications and badges.',
     accent: 'teal',
+    thumbnail: { src: asset('moles-5.jpeg'), alt: 'Signal analysis graph from M.O.L.E.S. confirming a breathing signal' },
     emoji: '🧰',
     visible: true,
   },
