@@ -13,6 +13,11 @@
   box-shadow: 0 10px 30px -14px rgba(47, 51, 61, 0.35);
 }
 
+/* The navbar goes away while a card's modal is open. */
+body.modal-open .navbar {
+  visibility: hidden;
+}
+
 .navbar__inner {
   position: relative;
   display: flex;
