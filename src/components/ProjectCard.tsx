@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { accentStyle } from '../data/accentColors'
 import { entryView, type Entry } from '../data/types'
-import { ArrowRightIcon } from './icons'
+import { ArrowRightIcon, ExternalLinkIcon } from './icons'
 import { ProjectThumb } from './ProjectThumb'
 
 interface Props {
@@ -12,6 +12,8 @@ interface Props {
 export function ProjectCard({ entry, onExpand }: Props) {
   const [subIndex, setSubIndex] = useState(0)
   const view = entryView(entry, subIndex)
+  // The first link is the main way to see the project; the modal lists all of them.
+  const projectLink = entry.links?.[0]
   const meta = entry.event ? [entry.event, entry.period].filter(Boolean).join(' · ') : null
 
   return (
@@ -75,17 +77,30 @@ export function ProjectCard({ entry, onExpand }: Props) {
         </div>
       </div>
 
-      <button
-        className="project-card__expand neu-btn"
-        tabIndex={-1}
-        aria-hidden="true"
-        onClick={(e) => {
-          e.stopPropagation()
-          onExpand(entry, subIndex)
-        }}
-      >
-        View Details <ArrowRightIcon size={16} />
-      </button>
+      <div className="project-card__actions">
+        <button
+          className="project-card__expand neu-btn"
+          tabIndex={-1}
+          aria-hidden="true"
+          onClick={(e) => {
+            e.stopPropagation()
+            onExpand(entry, subIndex)
+          }}
+        >
+          View Details <ArrowRightIcon size={16} />
+        </button>
+        {projectLink && (
+          <a
+            className="project-card__view neu-btn"
+            href={projectLink.href}
+            target="_blank"
+            rel="noreferrer"
+            onClick={(e) => e.stopPropagation()}
+          >
+            View Project <ExternalLinkIcon size={15} />
+          </a>
+        )}
+      </div>
     </article>
   )
 }

@@ -293,6 +293,32 @@
   transition: box-shadow 0.15s ease;
 }
 
+.project-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 26px 26px;
+}
+
+.project-card__actions .project-card__expand {
+  margin: 0;
+}
+
+.project-card__view {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #101116;
+  background: var(--card-accent);
+}
+
+.project-card__view:focus-visible {
+  outline-color: var(--card-accent);
+}
+
 .project-card__expand:hover {
   box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light),
     0 4px 14px -4px var(--card-accent-glow);

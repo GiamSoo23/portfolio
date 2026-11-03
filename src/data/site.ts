@@ -35,7 +35,7 @@ export const pages: PageInfo[] = [
     id: 'experience',
     label: 'Experience',
     title: 'Experience',
-    description: 'Research at the EnCoDe Lab, the platform I lead for FIRST Global, and the Hackabull app.',
+    description: 'Research at the EnCoDe Lab and the platform I lead for FIRST Global.',
     accent: 'violet',
     thumbnail: experience[0].images?.[0],
     emoji: '💼',

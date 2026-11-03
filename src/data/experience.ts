@@ -45,22 +45,4 @@ export const experience: Entry[] = [
       'Built a 29-table Prisma/Postgres schema powering digital judge evaluations, Step & Repeat photo tracking, and broadcast announcements.',
     ],
   },
-  {
-    id: 'hackabull-app',
-    title: 'Hackabull Attendee App',
-    role: 'Project Manager',
-    period: 'January 2026 - April 2026',
-    summary:
-      "The official app for Hackabull, USF's student-led hackathon, with the event schedule, participant resources, and attendee networking through NFC lanyards (tap two badges to connect).",
-    tech: ['React', 'NFC', 'Product Design', 'Google Sheets API'],
-    accent: 'pink',
-    emoji: '📱',
-    // TODO(Gregory): add 2 to 4 app screenshots as public/projects/hackabull-app-1..4
-    images: [],
-    highlights: [
-      'Developed the app concept and led brainstorming, design, and testing with the engineering team.',
-      'Designed the NFC-based networking system that lets attendees exchange contact info by tapping their event lanyards.',
-    ],
-    team: ['Gabriel Fagundes Teixeira (engineering lead)', 'Ian Lopez (backend and dark mode)'],
-  },
 ]

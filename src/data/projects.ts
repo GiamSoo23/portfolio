@@ -53,7 +53,11 @@ export const projects: Entry[] = [
       'Excluded the recently repealed federal solar tax credit after researching current policy, keeping estimates accurate.',
       'Led and mentored a 4-person team as the sole backend developer, defining a shared Zod contract that let teammates build the UI, database, and gamification in parallel through a mid-project pivot in input design.',
     ],
-    // TODO(Gregory): Devpost or GitHub link
+    links: [
+      { label: 'Live Site', href: 'https://panelly-nu.vercel.app' },
+      { label: 'Devpost', href: 'https://devpost.com/software/panelly' },
+      { label: 'GitHub', href: 'https://github.com/GiamSoo23/Panelly' },
+    ],
   },
   {
     id: 'mox',
@@ -74,6 +78,6 @@ export const projects: Entry[] = [
       'Built a Swift menu-bar app and a Kotlin Android share-target so files move between Mac and Android in one hotkey.',
       'Implemented signed-URL access and a single-file relay schema, enabling native Android share-sheet integration.',
     ],
-    // TODO(Gregory): GitHub link
+    // TODO(Gregory): the Mox repo is private. Add its GitHub link here if you make it public.
   },
 ]
