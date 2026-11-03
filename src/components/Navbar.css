@@ -3,7 +3,6 @@
   top: 0;
   z-index: 40;
   padding: 20px 0;
-  background: linear-gradient(var(--bg) 60%, transparent);
   transition: background 0.25s ease, box-shadow 0.25s ease, padding 0.25s ease;
 }
 

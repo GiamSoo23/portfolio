@@ -57,19 +57,55 @@
 }
 
 .hero__socials {
-  margin-top: 28px;
+  margin-top: 30px;
   display: flex;
   gap: 14px;
   justify-content: center;
 }
 
 .hero__social {
-  width: 46px;
-  height: 46px;
+  position: relative;
+  width: 58px;
+  height: 58px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-secondary);
+  border-radius: 12px;
+  color: var(--text-primary);
+  background: #15171c;
+  box-shadow: 0 6px 0 #0b0c10, 0 9px 14px rgba(0, 0, 0, 0.55);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+/* The key's top face: it lights up on hover and darkens as it sinks. */
+.hero__social::before {
+  content: '';
+  position: absolute;
+  inset: 3px 5px 8px;
+  border-radius: 9px;
+  background: linear-gradient(180deg, #343843 0%, #292c35 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14), inset 0 -2px 3px rgba(0, 0, 0, 0.3);
+  transition: filter 0.12s ease;
+}
+
+.hero__social svg {
+  position: relative;
+  top: -2px;
+  width: 22px;
+  height: 22px;
+}
+
+.hero__social:hover::before {
+  filter: brightness(1.3);
+}
+
+.hero__social:active {
+  transform: translateY(5px);
+  box-shadow: 0 1px 0 #0b0c10, 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero__social:active::before {
+  filter: brightness(0.85);
 }
 
 .hero__photo-wrap {

@@ -30,7 +30,7 @@ export function Hero() {
               return (
                 <a
                   key={kind}
-                  className="neu-icon-btn hero__social"
+                  className="hero__social"
                   href={href}
                   target="_blank"
                   rel="noreferrer"

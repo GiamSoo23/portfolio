@@ -1,5 +1,6 @@
 import { useEffect, useRef, type ComponentType } from 'react'
 import './App.css'
+import { AmbientBackground } from './components/AmbientBackground'
 import { Footer } from './components/Footer'
 import { Navbar } from './components/Navbar'
 import { pages, SITE_NAME, type PageId } from './data/site'
@@ -47,6 +48,7 @@ function App() {
 
   return (
     <>
+      <AmbientBackground />
       <Navbar active={route.page} />
       <main>
         <Page key={route.page} />

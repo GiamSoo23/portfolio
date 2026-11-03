@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { accentStyle } from '../data/accentColors'
 import { entryView, type Entry } from '../data/types'
+import { cardTilt } from './cardTilt'
 import { ArrowRightIcon, ExternalLinkIcon } from './icons'
 import { ProjectThumb } from './ProjectThumb'
 
@@ -21,6 +22,7 @@ export function ProjectCard({ entry, onExpand }: Props) {
       className="project-card neu-raised"
       style={accentStyle(entry.accent)}
       data-entry-id={entry.id}
+      {...cardTilt}
       onClick={() => onExpand(entry, subIndex)}
       role="button"
       tabIndex={0}

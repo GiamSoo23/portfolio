@@ -80,6 +80,7 @@ export const hero = {
 export const currently: string[] = [
   'Lead Developer, FIRST Global',
   'Research Assistant, EnCoDe Lab at USF',
+  'IBM Z Student Ambassador',
 ]
 
 export const about: string[] = [

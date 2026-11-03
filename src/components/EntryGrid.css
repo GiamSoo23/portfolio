@@ -49,6 +49,24 @@
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
+/* Soft light that tracks the cursor; --glow-x and --glow-y come from cardTilt. */
+.project-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(260px circle at var(--glow-x, 50%) var(--glow-y, 50%), color-mix(in srgb, var(--card-accent) 16%, transparent), transparent);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+@media (hover: hover) {
+  .project-card:hover::after {
+    opacity: 1;
+  }
+}
+
 .project-card:focus-visible {
   outline: 2px solid var(--card-accent);
   outline-offset: 3px;

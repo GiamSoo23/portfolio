@@ -1,3 +1,4 @@
+import { cardTilt } from '../components/cardTilt'
 import { Hero } from '../components/Hero'
 import { ArrowRightIcon } from '../components/icons'
 import { ProjectThumb } from '../components/ProjectThumb'
@@ -47,6 +48,7 @@ export function HomePage() {
                   href={routeHref(page.id)}
                   className="project-card project-card--link neu-raised"
                   style={accentStyle(page.accent)}
+                  {...cardTilt}
                 >
                   <ProjectThumb cover={page.thumbnail} emoji={page.emoji} />
                   <div className="project-card__body">
