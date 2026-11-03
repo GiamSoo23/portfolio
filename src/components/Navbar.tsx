@@ -6,7 +6,7 @@ import './Navbar.css'
 
 const MENUS: { id: string; label: string; Icon: typeof UserIcon; pageIds: PageId[] }[] = [
   { id: 'work', label: 'Work', Icon: BriefcaseIcon, pageIds: ['experience', 'projects'] },
-  { id: 'about', label: 'About', Icon: UserIcon, pageIds: ['leadership', 'skills', 'volunteering'] },
+  { id: 'about', label: 'About', Icon: UserIcon, pageIds: ['leadership', 'skills'] },
 ]
 
 interface Props {

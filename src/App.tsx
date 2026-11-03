@@ -9,7 +9,6 @@ import { HomePage } from './pages/HomePage'
 import { LeadershipPage } from './pages/LeadershipPage'
 import { ProjectsPage } from './pages/ProjectsPage'
 import { SkillsPage } from './pages/SkillsPage'
-import { VolunteeringPage } from './pages/VolunteeringPage'
 
 const PAGE_COMPONENTS: Record<PageId, ComponentType> = {
   home: HomePage,
@@ -17,7 +16,6 @@ const PAGE_COMPONENTS: Record<PageId, ComponentType> = {
   projects: ProjectsPage,
   leadership: LeadershipPage,
   skills: SkillsPage,
-  volunteering: VolunteeringPage,
 }
 
 function App() {

@@ -18,12 +18,6 @@ html {
   padding: 40px 0 90px;
 }
 
-.page__empty {
-  margin-top: 36px;
-  color: var(--text-secondary);
-  font-size: 1.05rem;
-}
-
 /* Cards that are plain links (home page cards, cross-links) rather than modal triggers. */
 .project-card--link {
   color: inherit;
@@ -32,22 +26,6 @@ html {
 .project-card--link:focus-visible {
   outline: 2px solid var(--card-accent);
   outline-offset: 3px;
-}
-
-.project-card--static {
-  cursor: default;
-}
-
-.project-card--static:hover {
-  transform: none;
-}
-
-.volunteer__body {
-  padding-bottom: 26px;
-}
-
-.volunteer__body .text-link {
-  margin-top: 16px;
 }
 
 /* --- Shared sub-section headings and inline links --- */

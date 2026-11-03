@@ -2,11 +2,10 @@ import { experience } from './experience'
 import { leadership } from './leadership'
 import { projects } from './projects'
 import { published, type AccentColor, type Photo } from './types'
-import { volunteering } from './volunteering'
 
 export const SITE_NAME = 'Gregory Ramírez Fuentes'
 
-export type PageId = 'home' | 'experience' | 'projects' | 'leadership' | 'skills' | 'volunteering'
+export type PageId = 'home' | 'experience' | 'projects' | 'leadership' | 'skills'
 
 export interface PageInfo {
   id: PageId
@@ -69,15 +68,6 @@ export const pages: PageInfo[] = [
     accent: 'teal',
     emoji: '🧰',
     visible: true,
-  },
-  {
-    id: 'volunteering',
-    label: 'Volunteering',
-    title: 'Volunteering',
-    description: 'Community and outreach events.',
-    accent: 'green',
-    emoji: '🤝',
-    visible: published(volunteering).length > 0,
   },
 ]
 
