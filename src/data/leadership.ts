@@ -36,6 +36,22 @@ export const leadership: Entry[] = [
     emoji: '🤖',
     subsections: [
       {
+        id: 'production-2026',
+        label: 'FGC 2026',
+        role: 'Production Volunteer',
+        tagline: 'Behind the camera with the Production team in Incheon.',
+        summary: 'Behind the camera with the Production team at the FIRST Global Challenge in Incheon.',
+        period: 'October 2026',
+        location: 'Incheon, South Korea',
+        images: [
+          { src: asset('productionfgc2026-1.jpg'), alt: 'The Production team sitting together on the stage at the FIRST Global Challenge 2026' },
+        ],
+        highlights: [
+          'Volunteered with the Production team, working behind the camera for the first time: running student interviews, tracking down teams across the venue, setting up cameras, and moving gear across the arena.',
+          'Wrote the daily messages telling mentors of recorded teams where to be.',
+        ],
+      },
+      {
         id: 'team-chile',
         label: 'Team Chile',
         role: 'Mentor',
@@ -48,21 +64,6 @@ export const leadership: Entry[] = [
           'Mentored FIRST Global Team Chile, helping the team develop soft skills in communication and teamwork.',
           'Through the team’s TV, government, and radio appearances, helped raise about $25,000 over the last two years to cover the team’s costs to compete.',
           'Ran English preparation classes so students could handle judge Q&A.',
-        ],
-      },
-      {
-        id: 'production-2026',
-        label: 'FGC 2026',
-        role: 'Production Volunteer',
-        tagline: 'Behind the camera with the Production team in Incheon.',
-        summary: 'Behind the camera with the Production team at the FIRST Global Challenge in Incheon.',
-        period: 'October 2026',
-        location: 'Incheon, South Korea',
-        // TODO(Gregory): add public/projects/productionfgc2026-1..3
-        images: [],
-        highlights: [
-          'Volunteered with the Production team, working behind the camera for the first time: running student interviews, tracking down teams across the venue, setting up cameras, and moving gear across the arena.',
-          'Wrote the daily messages telling mentors of recorded teams where to be.',
         ],
       },
       {
