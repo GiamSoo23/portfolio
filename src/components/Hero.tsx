@@ -1,4 +1,4 @@
-import { contactLinks, currently, hero, RESUME_URL, SITE_NAME } from '../data/site'
+import { contactLinks, currently, hero, SITE_NAME } from '../data/site'
 import { routeHref } from '../hooks/useHashRoute'
 import { Greeting } from './Greeting'
 import { ArrowRightIcon, GitHubIcon, LinkedInIcon, MailIcon } from './icons'
@@ -23,11 +23,6 @@ export function Hero() {
             <a className="neu-btn hero__cta" href={routeHref('experience')}>
               Check My Work <ArrowRightIcon size={16} />
             </a>
-            {RESUME_URL && (
-              <a className="neu-btn hero__cta hero__cta--ghost" href={RESUME_URL} target="_blank" rel="noreferrer">
-                Download Resume
-              </a>
-            )}
           </div>
 
           <div className="hero__socials">

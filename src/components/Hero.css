@@ -56,11 +56,6 @@
   outline-offset: 4px;
 }
 
-.hero__cta--ghost {
-  background: var(--bg-raised);
-  color: var(--text-primary);
-}
-
 .hero__socials {
   margin-top: 28px;
   display: flex;

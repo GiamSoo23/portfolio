@@ -169,7 +169,7 @@ html {
   background: color-mix(in srgb, var(--accent-8) 16%, transparent);
 }
 
-.cert__status--joining {
+.cert__status--joined {
   color: var(--accent-2);
   background: color-mix(in srgb, var(--accent-2) 16%, transparent);
 }

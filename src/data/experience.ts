@@ -43,7 +43,6 @@ export const experience: Entry[] = [
     highlights: [
       'Architected and built the platform from scratch to replace paper sheets and word-of-mouth coordination.',
       'Built a 29-table Prisma/Postgres schema powering digital judge evaluations, Step & Repeat photo tracking, and broadcast announcements.',
-      // TODO(Gregory): how many people actually used it during FGC 2026 in Incheon, and which features were used most? Do not write "used by" until this is filled in.
     ],
   },
   {
@@ -52,8 +51,8 @@ export const experience: Entry[] = [
     role: 'Project Manager',
     period: 'January 2026 - April 2026',
     summary:
-      "The official mobile app for Hackabull, USF's student-led hackathon, with the event schedule, participant resources, and attendee networking through NFC lanyards (tap two badges to connect). Published on Google Play.",
-    tech: ['React Native', 'Mobile App', 'NFC', 'Product Design', 'Google Sheets API'],
+      "The official app for Hackabull, USF's student-led hackathon, with the event schedule, participant resources, and attendee networking through NFC lanyards (tap two badges to connect).",
+    tech: ['React', 'NFC', 'Product Design', 'Google Sheets API'],
     accent: 'pink',
     emoji: '📱',
     // TODO(Gregory): add 2 to 4 app screenshots as public/projects/hackabull-app-1..4
@@ -63,7 +62,5 @@ export const experience: Entry[] = [
       'Designed the NFC-based networking system that lets attendees exchange contact info by tapping their event lanyards.',
     ],
     team: ['Gabriel Fagundes Teixeira (engineering lead)', 'Ian Lopez (backend and dark mode)'],
-    // TODO(Gregory): this Google Play link returned 404 on Oct 22, 2026, so it is left out until the package id is fixed or the listing is public:
-    // links: [{ label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.hackabull.attendee' }],
   },
 ]

@@ -121,7 +121,7 @@ export const skillGroups: SkillGroup[] = [
   },
 ]
 
-export type CertificationStatus = 'Earned' | 'Joining' | 'Planned'
+export type CertificationStatus = 'Earned' | 'Joined' | 'Planned'
 
 export interface Certification {
   id: string
@@ -148,7 +148,7 @@ export const certifications: Certification[] = [
     id: 'ibm-z-ambassador',
     name: 'IBM Z Student Ambassador',
     issuer: 'IBM',
-    status: 'Joining',
+    status: 'Joined',
     date: 'October 2026',
   },
   {

@@ -1,4 +1,4 @@
-import { contactLinks, RESUME_URL, SITE_NAME } from '../data/site'
+import { contactLinks, SITE_NAME } from '../data/site'
 
 export function Footer() {
   return (
@@ -10,11 +10,6 @@ export function Footer() {
               {label}
             </a>
           ))}
-          {RESUME_URL && (
-            <a href={RESUME_URL} target="_blank" rel="noreferrer">
-              Resume
-            </a>
-          )}
         </nav>
         <p className="footer__copy">
           © {new Date().getFullYear()} {SITE_NAME}. Built with React.

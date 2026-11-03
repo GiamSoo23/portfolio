@@ -83,10 +83,10 @@ export const leadership: Entry[] = [
   {
     id: 'copa-kai',
     title: 'Copa Ka’i',
-    role: 'Co-founder and Production Director',
+    role: 'Executive Staff and Production Director',
     period: 'Jan 2024 - Jun 2024',
     location: 'Maracaibo, Venezuela',
-    summary: "Co-founded Venezuela's largest robotics competition and led its production.",
+    summary: "Served on the executive organizing staff of Venezuela's largest robotics competition and led its production.",
     tech: ['Event Production', 'AV Design', 'Logistics', 'Team Training'],
     accent: 'orange',
     emoji: '🎬',

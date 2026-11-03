@@ -6,10 +6,6 @@ import { volunteering } from './volunteering'
 
 export const SITE_NAME = 'Gregory Ramírez Fuentes'
 
-/** Set to `${import.meta.env.BASE_URL}resume.pdf` once the file exists in public/. Until then every resume button is hidden. */
-// TODO(Gregory): add resume.pdf to public/
-export const RESUME_URL: string | null = null
-
 export type PageId = 'home' | 'experience' | 'projects' | 'leadership' | 'skills' | 'volunteering'
 
 export interface PageInfo {
@@ -59,7 +55,7 @@ export const pages: PageInfo[] = [
     id: 'leadership',
     label: 'Leadership',
     title: 'Leadership',
-    description: 'SHPE at USF, FIRST Global, and co-founding Copa Ka’i.',
+    description: 'SHPE at USF, FIRST Global, and Copa Ka’i.',
     accent: 'pink',
     thumbnail: leadership[0].images?.[0],
     emoji: '🚀',
@@ -91,15 +87,13 @@ export const hero = {
 }
 
 export const currently: string[] = [
-  'Looking for Summer 2027 software engineering internships',
   'Lead Developer, FIRST Global',
   'Research Assistant, EnCoDe Lab at USF',
-  'IBM Z Student Ambassador (joining October 2026)',
 ]
 
 export const about: string[] = [
   "I'm a Computer Science student at the University of South Florida who likes building technology that brings people together and makes their lives easier. I grew up between Venezuela and Chile, and robotics competitions are what first pulled me into engineering. Today I work across the full stack, with a soft spot for systems and software that talks to hardware.",
-  'Outside of code, I care about opening doors for other students. I helped set the foundations for Copa Ka’i, Venezuela’s largest robotics competition, served as VP of Technology for SHPE USF, led Hackabull, and I’m joining IBM’s Z Student Ambassador program. I’m currently looking for Summer 2027 software engineering internships, especially on teams that move fast and give engineers real ownership.',
+  'Outside of code, I care about opening doors for other students. I helped set the foundations for Copa Ka’i, Venezuela’s largest robotics competition, served as VP of Technology for SHPE USF, led Hackabull, and joined IBM’s Z Student Ambassador program in October 2026. I’m currently looking for Summer 2027 software engineering internships, especially on teams that move fast and give engineers real ownership.',
 ]
 
 export const education = {
